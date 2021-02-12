@@ -1,0 +1,25 @@
+> t.test(data$HUNDRED.NORMAL, data$HUNDRED.SHIFTED)
+
+	Welch Two Sample t-test
+
+data:  data$HUNDRED.NORMAL and data$HUNDRED.SHIFTED
+t = -0.69345, df = 185.98, p-value = 0.4889
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.02530120  0.01214034
+sample estimates:
+mean of x mean of y 
+ 1.490208  1.496788 
+
+> t.test(data$TEN.NORMAL, data$TEN.SHIFTED)
+
+	Welch Two Sample t-test
+
+data:  data$TEN.NORMAL and data$TEN.SHIFTED
+t = 0.96872, df = 172.31, p-value = 0.334
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.01018074  0.02980512
+sample estimates:
+mean of x mean of y 
+ 1.461227  1.451415 
