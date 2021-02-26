@@ -23,3 +23,61 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of x mean of y 
  1.461227  1.451415 
+
+	Welch Two Sample t-test
+
+data:  data$HUNDRED.NORMAL and data$TEN.NORMAL
+t = 3.5928, df = 197.8, p-value = 0.0004128
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.01307395 0.04488814
+sample estimates:
+mean of x mean of y 
+ 1.490208  1.461227 
+
+> t.test(data$HUNDRED.NORMAL, data$TEN.SHIFTED)
+
+	Welch Two Sample t-test
+
+data:  data$HUNDRED.NORMAL and data$TEN.SHIFTED
+t = 3.7915, df = 175.45, p-value = 0.0002057
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.01860057 0.05898590
+sample estimates:
+mean of x mean of y 
+ 1.490208  1.451415 
+
+> t.test(data$HUNDRED.SHIFTED, data$TEN.NORMAL)
+
+	Welch Two Sample t-test
+
+data:  data$HUNDRED.SHIFTED and data$TEN.NORMAL
+t = 3.7917, df = 183.22, p-value = 0.000203
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.01705706 0.05406589
+sample estimates:
+mean of x mean of y 
+ 1.496788  1.461227 
+
+> t.test(data$HUNDRED.SHIFTED, data$TEN.SHIFTED)
+
+	Welch Two Sample t-test
+
+data:  data$HUNDRED.SHIFTED and data$TEN.SHIFTED
+t = 4.0171, df = 195.43, p-value = 8.4e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.02309765 0.06764969
+sample estimates:
+mean of x mean of y 
+ 1.496788  1.451415 
+ 
+ However, comparing the hundred datasets to the ten datasets is probably not statistically inferrable, as their variances are greatly different. However, it does make sense that
+ there are operational time costs when it comes to training the dataset. It could be said that an attacker could infer if one dataset is greater in size than another,
+ but probably would be unable to measure the difference in size.
+> var(data$TEN.SHIFTED)
+[1] 0.007110729
+> var(data$HUNDRED.NORMAL)
+[1] 0.00335764
