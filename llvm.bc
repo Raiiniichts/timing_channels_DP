@@ -1,0 +1,2318 @@
+; ModuleID = 'get_noise_multiplier'
+source_filename = "<string>"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-windows-msvc"
+
+@"_ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject" = common local_unnamed_addr global i8* null
+@.const.picklebuf.2134948869440 = internal constant { i8*, i32, i8* } { i8* getelementptr inbounds ([181 x i8], [181 x i8]* @.const.pickledata.2134948869440, i32 0, i32 0), i32 181, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.2134948869440.sha1, i32 0, i32 0) }
+@.const.pickledata.2134806331728 = internal constant [51 x i8] c"\80\04\95(\00\00\00\00\00\00\00\8C\15numba.core.dispatcher\94\8C\0AOmittedArg\94\93\94."
+@.const.pickledata.2134806331728.sha1 = internal constant [20 x i8] c"\0A\DA\1EUL\BC\A5\90L\08kke\B6\89\B1\8C]}\9B"
+@.const.value = internal constant [6 x i8] c"value\00"
+@PyExc_RuntimeError = external global i8
+@".const.`env.consts` is NULL in `read_const`" = internal constant [37 x i8] c"`env.consts` is NULL in `read_const`\00"
+@PyExc_NameError = external global i8
+@".const.global name 'float' is not defined" = internal constant [35 x i8] c"global name 'float' is not defined\00"
+@".const.name 'target_epsilon' is not defined" = internal constant [37 x i8] c"name 'target_epsilon' is not defined\00"
+@".const.global name 'bool' is not defined" = internal constant [34 x i8] c"global name 'bool' is not defined\00"
+@".const.name 'sigma_max' is not defined" = internal constant [32 x i8] c"name 'sigma_max' is not defined\00"
+@".const.global name 'privacy_analysis' is not defined" = internal constant [46 x i8] c"global name 'privacy_analysis' is not defined\00"
+@".const.name 'epochs' is not defined" = internal constant [29 x i8] c"name 'epochs' is not defined\00"
+@".const.name 'sample_rate' is not defined" = internal constant [34 x i8] c"name 'sample_rate' is not defined\00"
+@".const.name 'alphas' is not defined" = internal constant [29 x i8] c"name 'alphas' is not defined\00"
+@".const.name 'target_delta' is not defined" = internal constant [35 x i8] c"name 'target_delta' is not defined\00"
+@".const.global name 'ValueError' is not defined" = internal constant [40 x i8] c"global name 'ValueError' is not defined\00"
+@".const.name 'sigma_min' is not defined" = internal constant [32 x i8] c"name 'sigma_min' is not defined\00"
+@".const.name 'sigma' is not defined" = internal constant [28 x i8] c"name 'sigma' is not defined\00"
+@.const.pickledata.2134948869440 = internal constant [181 x i8] c"\80\04\95\AA\00\00\00\00\00\00\00\8C\08builtins\94\8C\0CRuntimeError\94\93\94\8C\85missing Environment: _ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject\94\85\94N\87\94."
+@.const.pickledata.2134948869440.sha1 = internal constant [20 x i8] c"Z\C3Z\FE?\A8=\22\A2Y\F0\9Fr\D4\EA/\D8\9F\B1m"
+@.const.get_noise_multiplier = internal constant [21 x i8] c"get_noise_multiplier\00"
+@".const.missing Environment: _ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject" = internal constant [134 x i8] c"missing Environment: _ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject\00"
+@_Py_NoneStruct = external global i8
+@PyExc_StopIteration = external global i8
+@PyExc_SystemError = external global i8
+@".const.unknown error when calling native function" = internal constant [43 x i8] c"unknown error when calling native function\00"
+
+define i32 @"_ZN8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject"(i8** noalias nocapture %retptr, { i8*, i32, i8* }** noalias nocapture %excinfo, i8* %arg.target_epsilon, i8* %arg.target_delta, i8* %arg.sample_rate, i8* %arg.epochs, i8* %arg.alphas, i8* %arg.sigma_min, i8* %arg.sigma_max) local_unnamed_addr {
+entry:
+  %.11 = load i8*, i8** @"_ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject", align 8
+  %.12 = icmp eq i8* %.11, null
+  br i1 %.12, label %entry.if, label %entry.endif, !prof !0
+
+B10:                                              ; preds = %B18.endif.endif.endif.end...endif.12.endif, %B0.endif.endif.endif.endi...endif.1
+  %sigma_max.0 = phi i8* [ %.87.0, %B0.endif.endif.endif.endi...endif.1 ], [ %.797, %B18.endif.endif.endif.end...endif.12.endif ]
+  %eps.0 = phi i8* [ %.344, %B0.endif.endif.endif.endi...endif.1 ], [ %.1544, %B18.endif.endif.endif.end...endif.12.endif ]
+  %"$70pred.0" = phi i8* [ null, %B0.endif.endif.endif.endi...endif.1 ], [ %.1912, %B18.endif.endif.endif.end...endif.12.endif ]
+  %0 = icmp eq i8* %arg.target_epsilon, null
+  tail call void @Py_DecRef(i8* %"$70pred.0")
+  br i1 %0, label %B10.endif.if, label %B10.endif.endif, !prof !0
+
+B18:                                              ; preds = %B10.endif.endif.endif.end...endif.1
+  %.723 = load i8*, i8** %.104, align 8
+  %.727 = icmp eq i8* %.723, null
+  br i1 %.727, label %B18.endif.thread, label %B18.endif
+
+B72:                                              ; preds = %B18.endif.endif.endif.end...endif.12.endif
+  %1 = inttoptr i64 %.22 to { i8*, i8* }*
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1912)
+  %2 = bitcast { i8*, i8* }* %1 to i8**
+  %.1999 = load i8*, i8** %2, align 8
+  %3 = bitcast { i8*, i8* }* %1 to i8*
+  %sunkaddr = getelementptr inbounds i8, i8* %3, i64 8
+  %4 = bitcast i8* %sunkaddr to i8**
+  %.2001 = load i8*, i8** %4, align 8
+  %.2005 = icmp eq i8* %.2001, null
+  br i1 %.2005, label %B82.endif.thread, label %B82.endif
+
+B152:                                             ; preds = %B94.endif.endif.endif.end...endif.3.endif
+  tail call void @Py_DecRef(i8* nonnull %.2575)
+  %.2679 = tail call i8* @PyNumber_Add(i8* nonnull %sigma_min.0150428356581, i8* nonnull %sigma_max.1150528346582)
+  %.2680 = icmp eq i8* %.2679, null
+  br i1 %.2680, label %B152.endif.endif.if, label %B152.endif.endif.endif, !prof !0
+
+B166:                                             ; preds = %B94.endif.endif.endif.end...endif.3.endif
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.2575)
+  %.4047 = icmp eq i8* %sigma.0150628336583, null
+  br i1 %.4047, label %B167.if, label %B167.endif, !prof !0
+
+entry.if:                                         ; preds = %entry
+  store { i8*, i32, i8* }* @.const.picklebuf.2134948869440, { i8*, i32, i8* }** %excinfo, align 8
+  ret i32 1, !ret_is_raise !1
+
+entry.endif:                                      ; preds = %entry
+  %.21 = ptrtoint i8* %.11 to i64
+  %.22 = add i64 %.21, 16
+  tail call void @Py_IncRef(i8* %arg.target_epsilon)
+  tail call void @Py_IncRef(i8* %arg.target_delta)
+  tail call void @Py_IncRef(i8* %arg.sample_rate)
+  tail call void @Py_IncRef(i8* %arg.epochs)
+  tail call void @Py_IncRef(i8* %arg.alphas)
+  %.68 = tail call i8* @numba_py_type(i8* %arg.sigma_min)
+  %.75 = tail call i8* @numba_unpickle(i8* getelementptr inbounds ([51 x i8], [51 x i8]* @.const.pickledata.2134806331728, i64 0, i64 0), i32 51, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.const.pickledata.2134806331728.sha1, i64 0, i64 0))
+  %.76 = icmp eq i8* %.68, %.75
+  br i1 %.76, label %B0.if, label %B0.else, !prof !0
+
+B0.if:                                            ; preds = %entry.endif
+  %.81 = tail call i8* @PyObject_GetAttrString(i8* %arg.sigma_min, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.const.value, i64 0, i64 0))
+  br label %B0.endif
+
+B0.else:                                          ; preds = %entry.endif
+  tail call void @Py_IncRef(i8* %arg.sigma_min)
+  br label %B0.endif
+
+B0.endif:                                         ; preds = %B0.else, %B0.if
+  %.65.0 = phi i8* [ %.81, %B0.if ], [ %arg.sigma_min, %B0.else ]
+  %.90 = tail call i8* @numba_py_type(i8* %arg.sigma_max)
+  %.91 = icmp eq i8* %.90, %.75
+  br i1 %.91, label %B0.endif.if, label %B0.endif.else, !prof !0
+
+B0.endif.if:                                      ; preds = %B0.endif
+  %.96 = tail call i8* @PyObject_GetAttrString(i8* %arg.sigma_max, i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.const.value, i64 0, i64 0))
+  br label %B0.endif.endif
+
+B0.endif.else:                                    ; preds = %B0.endif
+  tail call void @Py_IncRef(i8* %arg.sigma_max)
+  br label %B0.endif.endif
+
+B0.endif.endif:                                   ; preds = %B0.endif.else, %B0.endif.if
+  %.87.0 = phi i8* [ %.96, %B0.endif.if ], [ %arg.sigma_max, %B0.endif.else ]
+  %5 = inttoptr i64 %.22 to { i8*, i8* }*
+  %.1029103 = bitcast { i8*, i8* }* %5 to i8**
+  %.103 = load i8*, i8** %.1029103, align 8
+  %.104 = getelementptr inbounds { i8*, i8* }, { i8*, i8* }* %5, i64 0, i32 1
+  %.105 = load i8*, i8** %.104, align 8
+  %.109 = icmp eq i8* %.105, null
+  br i1 %.109, label %B0.endif.endif.endif.thread, label %B0.endif.endif.endif
+
+B0.endif.endif.endif.thread:                      ; preds = %B0.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B0.endif.endif.endif.if
+
+B0.endif.endif.endif:                             ; preds = %B0.endif.endif
+  %.111 = tail call i8* @PyList_GetItem(i8* nonnull %.105, i64 0)
+  %.117 = icmp eq i8* %.111, null
+  br i1 %.117, label %B0.endif.endif.endif.if, label %B0.endif.endif.endif.endif, !prof !0
+
+B0.endif.endif.endif.if:                          ; preds = %B0.endif.endif.endif.thread, %B0.endif.endif.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endif:                       ; preds = %B0.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.111)
+  %.135 = tail call i8* @PyDict_GetItem(i8* %.103, i8* nonnull %.111)
+  tail call void @Py_IncRef(i8* %.135)
+  %.137 = icmp eq i8* %.135, null
+  br i1 %.137, label %B0.endif.endif.endif.endif.if, label %B0.endif.endif.endif.endif.endif
+
+B0.endif.endif.endif.endif.if:                    ; preds = %B0.endif.endif.endif.endif
+  %.140 = load i8*, i8** %.104, align 8
+  %.144 = icmp eq i8* %.140, null
+  br i1 %.144, label %B0.endif.endif.endif.endif.if.endif.thread, label %B0.endif.endif.endif.endif.if.endif
+
+B0.endif.endif.endif.endif.endif:                 ; preds = %B0.endif.endif.endif.endi...if.endif.endif, %B0.endif.endif.endif.endif.if.endif.endif.endif.endif, %B0.endif.endif.endif.endif
+  %.259 = phi i8* [ %.135, %B0.endif.endif.endif.endif ], [ %.202, %B0.endif.endif.endif.endif.if.endif.endif.endif.endif ], [ %.237, %B0.endif.endif.endif.endi...if.endif.endif ]
+  %.263 = load i8*, i8** %.104, align 8
+  %.267 = icmp eq i8* %.263, null
+  br i1 %.267, label %B0.endif.endif.endif.endif.endif.endif.thread, label %B0.endif.endif.endif.endif.endif.endif
+
+B0.endif.endif.endif.endif.if.endif.thread:       ; preds = %B0.endif.endif.endif.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B0.endif.endif.endif.endif.if.endif.if
+
+B0.endif.endif.endif.endif.if.endif:              ; preds = %B0.endif.endif.endif.endif.if
+  %.146 = tail call i8* @PyList_GetItem(i8* nonnull %.140, i64 1)
+  %.152 = icmp eq i8* %.146, null
+  br i1 %.152, label %B0.endif.endif.endif.endif.if.endif.if, label %B0.endif.endif.endif.endif.if.endif.endif, !prof !0
+
+B0.endif.endif.endif.endif.if.endif.if:           ; preds = %B0.endif.endif.endif.endif.if.endif.thread, %B0.endif.endif.endif.endif.if.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endif.if.endif.endif:        ; preds = %B0.endif.endif.endif.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.146)
+  %.170 = tail call i8* @PyDict_GetItem(i8* %.103, i8* nonnull %.146)
+  %.172 = load i8*, i8** %.104, align 8
+  %.176 = icmp eq i8* %.172, null
+  br i1 %.176, label %B0.endif.endif.endif.endif.if.endif.endif.endif.thread, label %B0.endif.endif.endif.endif.if.endif.endif.endif
+
+B0.endif.endif.endif.endif.if.endif.endif.endif.thread: ; preds = %B0.endif.endif.endif.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B0.endif.endif.endif.endif.if.endif.endif.endif.if
+
+B0.endif.endif.endif.endif.if.endif.endif.endif:  ; preds = %B0.endif.endif.endif.endif.if.endif.endif
+  %.178 = tail call i8* @PyList_GetItem(i8* nonnull %.172, i64 0)
+  %.184 = icmp eq i8* %.178, null
+  br i1 %.184, label %B0.endif.endif.endif.endif.if.endif.endif.endif.if, label %B0.endif.endif.endif.endif.if.endif.endif.endif.endif, !prof !0
+
+B0.endif.endif.endif.endif.if.endif.endif.endif.if: ; preds = %B0.endif.endif.endif.endif.if.endif.endif.endif.thread, %B0.endif.endif.endif.endif.if.endif.endif.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endif.if.endif.endif.endif.endif: ; preds = %B0.endif.endif.endif.endif.if.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.178)
+  %.202 = tail call i8* @PyDict_GetItem(i8* %.170, i8* nonnull %.178)
+  tail call void @Py_IncRef(i8* %.202)
+  %.204 = icmp eq i8* %.202, null
+  br i1 %.204, label %B0.endif.endif.endif.endi...if, label %B0.endif.endif.endif.endif.endif, !prof !0
+
+B0.endif.endif.endif.endi...if:                   ; preds = %B0.endif.endif.endif.endif.if.endif.endif.endif.endif
+  %.207 = load i8*, i8** %.104, align 8
+  %.211 = icmp eq i8* %.207, null
+  br i1 %.211, label %B0.endif.endif.endif.endi...if.endif.thread, label %B0.endif.endif.endif.endi...if.endif
+
+B0.endif.endif.endif.endi...if.endif.thread:      ; preds = %B0.endif.endif.endif.endi...if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B0.endif.endif.endif.endi...if.endif.if
+
+B0.endif.endif.endif.endi...if.endif:             ; preds = %B0.endif.endif.endif.endi...if
+  %.213 = tail call i8* @PyList_GetItem(i8* nonnull %.207, i64 0)
+  %.219 = icmp eq i8* %.213, null
+  br i1 %.219, label %B0.endif.endif.endif.endi...if.endif.if, label %B0.endif.endif.endif.endi...if.endif.endif, !prof !0
+
+B0.endif.endif.endif.endi...if.endif.if:          ; preds = %B0.endif.endif.endif.endi...if.endif.thread, %B0.endif.endif.endif.endi...if.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endi...if.endif.endif:       ; preds = %B0.endif.endif.endif.endi...if.endif
+  tail call void @Py_IncRef(i8* nonnull %.213)
+  %.237 = tail call i8* @PyObject_GetAttr(i8* %.170, i8* nonnull %.213)
+  %.238 = icmp eq i8* %.237, null
+  br i1 %.238, label %B0.endif.endif.endif.endi...if.endif.endif.if, label %B0.endif.endif.endif.endif.endif, !prof !0
+
+B0.endif.endif.endif.endi...if.endif.endif.if:    ; preds = %B0.endif.endif.endif.endi...if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @".const.global name 'float' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endif.endif.endif.thread:    ; preds = %B0.endif.endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B0.endif.endif.endif.endif.endif.endif.if
+
+B0.endif.endif.endif.endif.endif.endif:           ; preds = %B0.endif.endif.endif.endif.endif
+  %.269 = tail call i8* @PyList_GetItem(i8* nonnull %.263, i64 2)
+  %.275 = icmp eq i8* %.269, null
+  br i1 %.275, label %B0.endif.endif.endif.endif.endif.endif.if, label %B0.endif.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B0.endif.endif.endif.endif.endif.endif.if:        ; preds = %B0.endif.endif.endif.endif.endif.endif.thread, %B0.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.259)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B0.endif.endif.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.269)
+  %.343 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.269)
+  %.344 = tail call i8* @PyObject_Call(i8* nonnull %.259, i8* %.343, i8* null)
+  tail call void @Py_DecRef(i8* %.343)
+  %.346 = icmp eq i8* %.344, null
+  br i1 %.346, label %B0.endif.endif.endif.endi...if.1, label %B0.endif.endif.endif.endi...endif.1, !prof !0
+
+B0.endif.endif.endif.endi...if.1:                 ; preds = %B0.endif.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.259)
+  tail call void @Py_DecRef(i8* nonnull %.269)
+  ret i32 -1, !ret_is_raise !1
+
+B0.endif.endif.endif.endi...endif.1:              ; preds = %B0.endif.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.269)
+  tail call void @Py_DecRef(i8* nonnull %.259)
+  br label %B10
+
+B10.endif.if:                                     ; preds = %B10
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.name 'target_epsilon' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* %.87.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.344)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif:                                  ; preds = %B10
+  %.422 = tail call i8* @PyObject_RichCompare(i8* nonnull %eps.0, i8* nonnull %arg.target_epsilon, i32 4)
+  %.423 = icmp eq i8* %.422, null
+  br i1 %.423, label %B10.endif.endif.if, label %B10.endif.endif.endif, !prof !0
+
+B10.endif.endif.if:                               ; preds = %B10.endif.endif
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %eps.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif:                            ; preds = %B10.endif.endif
+  %6 = inttoptr i64 %.22 to { i8*, i8* }*
+  %7 = bitcast { i8*, i8* }* %6 to i8**
+  tail call void @Py_DecRef(i8* nonnull %eps.0)
+  %.448 = load i8*, i8** %7, align 8
+  %8 = bitcast { i8*, i8* }* %6 to i8*
+  %sunkaddr9104 = getelementptr inbounds i8, i8* %8, i64 8
+  %9 = bitcast i8* %sunkaddr9104 to i8**
+  %.450 = load i8*, i8** %9, align 8
+  %.454 = icmp eq i8* %.450, null
+  br i1 %.454, label %B10.endif.endif.endif.endif.thread, label %B10.endif.endif.endif.endif
+
+B10.endif.endif.endif.endif.thread:               ; preds = %B10.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B10.endif.endif.endif.endif.if
+
+B10.endif.endif.endif.endif:                      ; preds = %B10.endif.endif.endif
+  %.456 = tail call i8* @PyList_GetItem(i8* nonnull %.450, i64 3)
+  %.462 = icmp eq i8* %.456, null
+  br i1 %.462, label %B10.endif.endif.endif.endif.if, label %B10.endif.endif.endif.endif.endif, !prof !0
+
+B10.endif.endif.endif.endif.if:                   ; preds = %B10.endif.endif.endif.endif, %B10.endif.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.endif.endif:                ; preds = %B10.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.456)
+  %.482 = tail call i8* @PyDict_GetItem(i8* %.448, i8* nonnull %.456)
+  tail call void @Py_IncRef(i8* %.482)
+  %.484 = icmp eq i8* %.482, null
+  br i1 %.484, label %B10.endif.endif.endif.endif.endif.if, label %B10.endif.endif.endif.endif.endif.endif.endif.endif
+
+B10.endif.endif.endif.endif.endif.if:             ; preds = %B10.endif.endif.endif.endif.endif
+  %.487 = load i8*, i8** %.104, align 8
+  %.491 = icmp eq i8* %.487, null
+  br i1 %.491, label %B10.endif.endif.endif.endif.endif.if.endif.thread, label %B10.endif.endif.endif.endif.endif.if.endif
+
+B10.endif.endif.endif.endif.endif.if.endif.thread: ; preds = %B10.endif.endif.endif.endif.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B10.endif.endif.endif.endif.endif.if.endif.if
+
+B10.endif.endif.endif.endif.endif.if.endif:       ; preds = %B10.endif.endif.endif.endif.endif.if
+  %.493 = tail call i8* @PyList_GetItem(i8* nonnull %.487, i64 1)
+  %.499 = icmp eq i8* %.493, null
+  br i1 %.499, label %B10.endif.endif.endif.endif.endif.if.endif.if, label %B10.endif.endif.endif.endif.endif.if.endif.endif, !prof !0
+
+B10.endif.endif.endif.endif.endif.if.endif.if:    ; preds = %B10.endif.endif.endif.endif.endif.if.endif, %B10.endif.endif.endif.endif.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.endif.endif.if.endif.endif: ; preds = %B10.endif.endif.endif.endif.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.493)
+  %.519 = tail call i8* @PyDict_GetItem(i8* %.448, i8* nonnull %.493)
+  %.521 = load i8*, i8** %.104, align 8
+  %.525 = icmp eq i8* %.521, null
+  br i1 %.525, label %B10.endif.endif.endif.endif.endif.if.endif.endif.endif.thread, label %B10.endif.endif.endif.endif.endif.if.endif.endif.endif
+
+B10.endif.endif.endif.endif.endif.if.endif.endif.endif.thread: ; preds = %B10.endif.endif.endif.endif.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B10.endif.endif.endif.end...if
+
+B10.endif.endif.endif.endif.endif.if.endif.endif.endif: ; preds = %B10.endif.endif.endif.endif.endif.if.endif.endif
+  %.527 = tail call i8* @PyList_GetItem(i8* nonnull %.521, i64 3)
+  %.533 = icmp eq i8* %.527, null
+  br i1 %.533, label %B10.endif.endif.endif.end...if, label %B10.endif.endif.endif.end...endif, !prof !0
+
+B10.endif.endif.endif.end...if:                   ; preds = %B10.endif.endif.endif.endif.endif.if.endif.endif.endif, %B10.endif.endif.endif.endif.endif.if.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.end...endif:                ; preds = %B10.endif.endif.endif.endif.endif.if.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.527)
+  %.553 = tail call i8* @PyDict_GetItem(i8* %.519, i8* nonnull %.527)
+  tail call void @Py_IncRef(i8* %.553)
+  %.555 = icmp eq i8* %.553, null
+  br i1 %.555, label %B10.endif.endif.endif.end...endif.if, label %B10.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B10.endif.endif.endif.end...endif.if:             ; preds = %B10.endif.endif.endif.end...endif
+  %.558 = load i8*, i8** %.104, align 8
+  %.562 = icmp eq i8* %.558, null
+  br i1 %.562, label %B10.endif.endif.endif.end...endif.if.endif.thread, label %B10.endif.endif.endif.end...endif.if.endif
+
+B10.endif.endif.endif.end...endif.if.endif.thread: ; preds = %B10.endif.endif.endif.end...endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B10.endif.endif.endif.end...endif.if.endif.if
+
+B10.endif.endif.endif.end...endif.if.endif:       ; preds = %B10.endif.endif.endif.end...endif.if
+  %.564 = tail call i8* @PyList_GetItem(i8* nonnull %.558, i64 3)
+  %.570 = icmp eq i8* %.564, null
+  br i1 %.570, label %B10.endif.endif.endif.end...endif.if.endif.if, label %B10.endif.endif.endif.end...endif.if.endif.endif, !prof !0
+
+B10.endif.endif.endif.end...endif.if.endif.if:    ; preds = %B10.endif.endif.endif.end...endif.if.endif, %B10.endif.endif.endif.end...endif.if.endif.thread
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.end...endif.if.endif.endif: ; preds = %B10.endif.endif.endif.end...endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.564)
+  %.590 = tail call i8* @PyObject_GetAttr(i8* %.519, i8* nonnull %.564)
+  %.591 = icmp eq i8* %.590, null
+  br i1 %.591, label %B10.endif.endif.endif.end...endif.if.endif.endif.if, label %B10.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B10.endif.endif.endif.end...endif.if.endif.endif.if: ; preds = %B10.endif.endif.endif.end...endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.global name 'bool' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B10.endif.endif.endif.end...endif.if.endif.endif, %B10.endif.endif.endif.end...endif, %B10.endif.endif.endif.endif.endif
+  %.614 = phi i8* [ %.482, %B10.endif.endif.endif.endif.endif ], [ %.553, %B10.endif.endif.endif.end...endif ], [ %.590, %B10.endif.endif.endif.end...endif.if.endif.endif ]
+  %.663 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.422)
+  %.664 = tail call i8* @PyObject_Call(i8* nonnull %.614, i8* %.663, i8* null)
+  tail call void @Py_DecRef(i8* %.663)
+  %.666 = icmp eq i8* %.664, null
+  br i1 %.666, label %B10.endif.endif.endif.end...if.1, label %B10.endif.endif.endif.end...endif.1, !prof !0
+
+B10.endif.endif.endif.end...if.1:                 ; preds = %B10.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.614)
+  ret i32 -1, !ret_is_raise !1
+
+B10.endif.endif.endif.end...endif.1:              ; preds = %B10.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.614)
+  tail call void @Py_DecRef(i8* nonnull %.422)
+  %.716 = tail call i32 @PyObject_IsTrue(i8* nonnull %.664)
+  %.717 = icmp eq i32 %.716, 0
+  tail call void @Py_DecRef(i8* nonnull %.664)
+  br i1 %.717, label %B94.preheader, label %B18
+
+B94.preheader:                                    ; preds = %B10.endif.endif.endif.end...endif.1
+  %.21611503 = icmp eq i8* %sigma_max.0, null
+  br i1 %.21611503, label %B94.if, label %B94.endif.preheader, !prof !0
+
+B94.endif.preheader:                              ; preds = %B94.preheader
+  %.21832832 = icmp eq i8* %.65.0, null
+  br i1 %.21832832, label %B94.endif.if, label %B94.endif.endif.preheader, !prof !0
+
+B94.endif.endif.preheader:                        ; preds = %B94.endif.preheader
+  %.22036579 = tail call i8* @PyNumber_Subtract(i8* nonnull %sigma_max.0, i8* nonnull %.65.0)
+  %.22046580 = icmp eq i8* %.22036579, null
+  br i1 %.22046580, label %B94.endif.endif.if, label %B94.endif.endif.endif.preheader, !prof !0
+
+B94.endif.endif.endif.preheader:                  ; preds = %B94.endif.endif.preheader
+  br label %B94.endif.endif.endif
+
+B18.endif.thread:                                 ; preds = %B18
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.if
+
+B18.endif:                                        ; preds = %B18
+  %.729 = tail call i8* @PyList_GetItem(i8* nonnull %.723, i64 4)
+  %.735 = icmp eq i8* %.729, null
+  br i1 %.735, label %B18.endif.if, label %B18.endif.endif, !prof !0
+
+B18.endif.if:                                     ; preds = %B18.endif, %B18.endif.thread
+  tail call void @Py_DecRef(i8* %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif:                                  ; preds = %B18.endif
+  tail call void @Py_IncRef(i8* nonnull %.729)
+  %.777 = icmp eq i8* %sigma_max.0, null
+  br i1 %.777, label %B18.endif.endif.endif.if, label %B18.endif.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.if:                         ; preds = %B18.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([32 x i8], [32 x i8]* @".const.name 'sigma_max' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.729)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.endif:                      ; preds = %B18.endif.endif
+  %.797 = tail call i8* @PyNumber_Multiply(i8* nonnull %.729, i8* nonnull %sigma_max.0)
+  %.798 = icmp eq i8* %.797, null
+  tail call void @Py_DecRef(i8* nonnull %.729)
+  br i1 %.798, label %B18.endif.endif.endif.endif.if, label %B18.endif.endif.endif.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.endif.if:                   ; preds = %B18.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.endif.endif.endif:          ; preds = %B18.endif.endif.endif.endif
+  %10 = inttoptr i64 %.22 to { i8*, i8* }*
+  %11 = bitcast { i8*, i8* }* %10 to i8**
+  tail call void @Py_IncRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  %.851 = load i8*, i8** %11, align 8
+  %12 = bitcast { i8*, i8* }* %10 to i8*
+  %sunkaddr9105 = getelementptr inbounds i8, i8* %12, i64 8
+  %13 = bitcast i8* %sunkaddr9105 to i8**
+  %.853 = load i8*, i8** %13, align 8
+  %.857 = icmp eq i8* %.853, null
+  br i1 %.857, label %B18.endif.endif.endif.endif.endif.endif.endif.thread, label %B18.endif.endif.endif.endif.endif.endif.endif
+
+B18.endif.endif.endif.endif.endif.endif.endif.thread: ; preds = %B18.endif.endif.endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.endif.endif.endif.endif.if
+
+B18.endif.endif.endif.endif.endif.endif.endif:    ; preds = %B18.endif.endif.endif.endif.endif.endif
+  %.859 = tail call i8* @PyList_GetItem(i8* nonnull %.853, i64 5)
+  %.865 = icmp eq i8* %.859, null
+  br i1 %.865, label %B18.endif.endif.endif.endif.endif.endif.endif.if, label %B18.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.endif.endif.endif.endif.if: ; preds = %B18.endif.endif.endif.endif.endif.endif.endif, %B18.endif.endif.endif.endif.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B18.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.859)
+  %.883 = tail call i8* @PyDict_GetItem(i8* %.851, i8* nonnull %.859)
+  tail call void @Py_IncRef(i8* %.883)
+  %.885 = icmp eq i8* %.883, null
+  br i1 %.885, label %B18.endif.endif.endif.end...if, label %B18.endif.endif.endif.end...endif.endif, !prof !0
+
+B18.endif.endif.endif.end...if:                   ; preds = %B18.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([46 x i8], [46 x i8]* @".const.global name 'privacy_analysis' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.endif:          ; preds = %B18.endif.endif.endif.endif.endif.endif.endif.endif
+  %.927 = load i8*, i8** %.104, align 8
+  %.931 = icmp eq i8* %.927, null
+  br i1 %.931, label %B18.endif.endif.endif.end...endif.endif.endif.thread, label %B18.endif.endif.endif.end...endif.endif.endif
+
+B18.endif.endif.endif.end...endif.endif.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.endif.endif.if
+
+B18.endif.endif.endif.end...endif.endif.endif:    ; preds = %B18.endif.endif.endif.end...endif.endif
+  %.933 = tail call i8* @PyList_GetItem(i8* nonnull %.927, i64 6)
+  %.939 = icmp eq i8* %.933, null
+  br i1 %.939, label %B18.endif.endif.endif.end...endif.endif.endif.if, label %B18.endif.endif.endif.end...endif.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.endif.endif, %B18.endif.endif.endif.end...endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.883)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.933)
+  %.959 = tail call i8* @PyObject_GetAttr(i8* nonnull %.883, i8* nonnull %.933)
+  %.960 = icmp eq i8* %.959, null
+  br i1 %.960, label %B18.endif.endif.endif.end...if.1, label %B18.endif.endif.endif.end...endif.1, !prof !0
+
+B18.endif.endif.endif.end...if.1:                 ; preds = %B18.endif.endif.endif.end...endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.883)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.1:              ; preds = %B18.endif.endif.endif.end...endif.endif.endif.endif
+  %14 = icmp eq i8* %arg.epochs, null
+  tail call void @Py_DecRef(i8* nonnull %.883)
+  br i1 %14, label %B18.endif.endif.endif.end...endif.1.if, label %B18.endif.endif.endif.end...endif.1.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.1.if:           ; preds = %B18.endif.endif.endif.end...endif.1
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @".const.name 'epochs' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.1.endif:        ; preds = %B18.endif.endif.endif.end...endif.1
+  %15 = icmp eq i8* %arg.sample_rate, null
+  br i1 %15, label %B18.endif.endif.endif.end...endif.1.endif.if, label %B18.endif.endif.endif.end...endif.1.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.1.endif.if:     ; preds = %B18.endif.endif.endif.end...endif.1.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.name 'sample_rate' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.1.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.1.endif
+  %.1026 = tail call i8* @PyNumber_TrueDivide(i8* nonnull %arg.epochs, i8* nonnull %arg.sample_rate)
+  %.1027 = icmp eq i8* %.1026, null
+  br i1 %.1027, label %B18.endif.endif.endif.end...endif.1.endif.endif.if, label %B18.endif.endif.endif.end...endif.2.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.1.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.1.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.2.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.1.endif.endif
+  %16 = icmp eq i8* %arg.alphas, null
+  br i1 %16, label %B18.endif.endif.endif.end...endif.2.endif.endif.if, label %B18.endif.endif.endif.end...endif.3, !prof !0
+
+B18.endif.endif.endif.end...endif.2.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.2.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @".const.name 'alphas' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %.1026)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.3:              ; preds = %B18.endif.endif.endif.end...endif.2.endif.endif
+  %.1163 = tail call i8* (i64, ...) @PyTuple_Pack(i64 4, i8* nonnull %arg.sample_rate, i8* nonnull %.797, i8* nonnull %.1026, i8* nonnull %arg.alphas)
+  %.1164 = tail call i8* @PyObject_Call(i8* nonnull %.959, i8* %.1163, i8* null)
+  tail call void @Py_DecRef(i8* %.1163)
+  %.1166 = icmp eq i8* %.1164, null
+  br i1 %.1166, label %B18.endif.endif.endif.end...endif.3.if, label %B18.endif.endif.endif.end...endif.3.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.3.if:           ; preds = %B18.endif.endif.endif.end...endif.3
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %.1026)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.3.endif:        ; preds = %B18.endif.endif.endif.end...endif.3
+  %17 = inttoptr i64 %.22 to { i8*, i8* }*
+  %18 = bitcast { i8*, i8* }* %17 to i8**
+  tail call void @Py_DecRef(i8* nonnull %.1026)
+  tail call void @Py_DecRef(i8* nonnull %.959)
+  %.1196 = load i8*, i8** %18, align 8
+  %19 = bitcast { i8*, i8* }* %17 to i8*
+  %sunkaddr9106 = getelementptr inbounds i8, i8* %19, i64 8
+  %20 = bitcast i8* %sunkaddr9106 to i8**
+  %.1198 = load i8*, i8** %20, align 8
+  %.1202 = icmp eq i8* %.1198, null
+  br i1 %.1202, label %B18.endif.endif.endif.end...endif.3.endif.endif.thread, label %B18.endif.endif.endif.end...endif.3.endif.endif
+
+B18.endif.endif.endif.end...endif.3.endif.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.3.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.3.endif.endif.if
+
+B18.endif.endif.endif.end...endif.3.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.3.endif
+  %.1204 = tail call i8* @PyList_GetItem(i8* nonnull %.1198, i64 5)
+  %.1210 = icmp eq i8* %.1204, null
+  br i1 %.1210, label %B18.endif.endif.endif.end...endif.3.endif.endif.if, label %B18.endif.endif.endif.end...endif.3.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.3.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.3.endif.endif, %B18.endif.endif.endif.end...endif.3.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.3.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.3.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.1204)
+  %.1230 = tail call i8* @PyDict_GetItem(i8* %.1196, i8* nonnull %.1204)
+  tail call void @Py_IncRef(i8* %.1230)
+  %.1232 = icmp eq i8* %.1230, null
+  br i1 %.1232, label %B18.endif.endif.endif.end...if.4, label %B18.endif.endif.endif.end...endif.4.endif, !prof !0
+
+B18.endif.endif.endif.end...if.4:                 ; preds = %B18.endif.endif.endif.end...endif.3.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([46 x i8], [46 x i8]* @".const.global name 'privacy_analysis' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.4.endif:        ; preds = %B18.endif.endif.endif.end...endif.3.endif.endif.endif
+  %.1278 = load i8*, i8** %.104, align 8
+  %.1282 = icmp eq i8* %.1278, null
+  br i1 %.1282, label %B18.endif.endif.endif.end...endif.4.endif.endif.thread, label %B18.endif.endif.endif.end...endif.4.endif.endif
+
+B18.endif.endif.endif.end...endif.4.endif.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.4.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.4.endif.endif.if
+
+B18.endif.endif.endif.end...endif.4.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.4.endif
+  %.1284 = tail call i8* @PyList_GetItem(i8* nonnull %.1278, i64 7)
+  %.1290 = icmp eq i8* %.1284, null
+  br i1 %.1290, label %B18.endif.endif.endif.end...endif.4.endif.endif.if, label %B18.endif.endif.endif.end...endif.4.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.4.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.4.endif.endif, %B18.endif.endif.endif.end...endif.4.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %.1230)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.4.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.4.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.1284)
+  %.1312 = tail call i8* @PyObject_GetAttr(i8* nonnull %.1230, i8* nonnull %.1284)
+  %.1313 = icmp eq i8* %.1312, null
+  br i1 %.1313, label %B18.endif.endif.endif.end...if.5, label %B18.endif.endif.endif.end...endif.5, !prof !0
+
+B18.endif.endif.endif.end...if.5:                 ; preds = %B18.endif.endif.endif.end...endif.4.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %.1230)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.5:              ; preds = %B18.endif.endif.endif.end...endif.4.endif.endif.endif
+  %21 = icmp eq i8* %arg.target_delta, null
+  tail call void @Py_DecRef(i8* nonnull %.1230)
+  br i1 %21, label %B18.endif.endif.endif.end...endif.5.endif.endif.if, label %B18.endif.endif.endif.end...endif.6, !prof !0
+
+B18.endif.endif.endif.end...endif.5.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.5
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @".const.name 'target_delta' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1312)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.6:              ; preds = %B18.endif.endif.endif.end...endif.5
+  %.1431 = tail call i8* (i64, ...) @PyTuple_Pack(i64 3, i8* nonnull %arg.alphas, i8* nonnull %.1164, i8* nonnull %arg.target_delta)
+  %.1432 = tail call i8* @PyObject_Call(i8* nonnull %.1312, i8* %.1431, i8* null)
+  tail call void @Py_DecRef(i8* %.1431)
+  %.1434 = icmp eq i8* %.1432, null
+  br i1 %.1434, label %B18.endif.endif.endif.end...endif.6.if, label %B18.endif.endif.endif.end...endif.6.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.6.if:           ; preds = %B18.endif.endif.endif.end...endif.6
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1312)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.6.endif:        ; preds = %B18.endif.endif.endif.end...endif.6
+  tail call void @Py_DecRef(i8* nonnull %.1164)
+  tail call void @Py_DecRef(i8* nonnull %.1312)
+  %.1464 = load i8*, i8** %.104, align 8
+  %.1468 = icmp eq i8* %.1464, null
+  br i1 %.1468, label %B18.endif.endif.endif.end...endif.6.endif.endif.thread, label %B18.endif.endif.endif.end...endif.6.endif.endif
+
+B18.endif.endif.endif.end...endif.6.endif.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.6.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.6.endif.endif.if
+
+B18.endif.endif.endif.end...endif.6.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.6.endif
+  %.1470 = tail call i8* @PyList_GetItem(i8* nonnull %.1464, i64 8)
+  %.1476 = icmp eq i8* %.1470, null
+  br i1 %.1476, label %B18.endif.endif.endif.end...endif.6.endif.endif.if, label %B18.endif.endif.endif.end...endif.6.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.6.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.6.endif.endif, %B18.endif.endif.endif.end...endif.6.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1432)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.6.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.6.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.1470)
+  %.1544 = tail call i8* @PyObject_GetItem(i8* nonnull %.1432, i8* nonnull %.1470)
+  %.1545 = icmp eq i8* %.1544, null
+  tail call void @Py_DecRef(i8* nonnull %.1470)
+  br i1 %.1545, label %B18.endif.endif.endif.end...endif.7.endif.if, label %B18.endif.endif.endif.end...endif.7.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.7.endif.if:     ; preds = %B18.endif.endif.endif.end...endif.6.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1432)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.7.endif.endif:  ; preds = %B18.endif.endif.endif.end...endif.6.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.1432)
+  %.1574 = load i8*, i8** %.104, align 8
+  %.1578 = icmp eq i8* %.1574, null
+  br i1 %.1578, label %B18.endif.endif.endif.end...endif.7.endif.endif.endif.thread, label %B18.endif.endif.endif.end...endif.7.endif.endif.endif
+
+B18.endif.endif.endif.end...endif.7.endif.endif.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.7.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...if.8
+
+B18.endif.endif.endif.end...endif.7.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.7.endif.endif
+  %.1580 = tail call i8* @PyList_GetItem(i8* nonnull %.1574, i64 9)
+  %.1586 = icmp eq i8* %.1580, null
+  br i1 %.1586, label %B18.endif.endif.endif.end...if.8, label %B18.endif.endif.endif.end...endif.8, !prof !0
+
+B18.endif.endif.endif.end...if.8:                 ; preds = %B18.endif.endif.endif.end...endif.7.endif.endif.endif, %B18.endif.endif.endif.end...endif.7.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.8:              ; preds = %B18.endif.endif.endif.end...endif.7.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.1580)
+  %.1654 = tail call i8* @PyObject_RichCompare(i8* nonnull %.797, i8* nonnull %.1580, i32 4)
+  %.1655 = icmp eq i8* %.1654, null
+  br i1 %.1655, label %B18.endif.endif.endif.end...endif.8.endif.endif.if, label %B18.endif.endif.endif.end...endif.8.endif.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.8.endif.endif.if: ; preds = %B18.endif.endif.endif.end...endif.8
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.1580)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.8.endif.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.8
+  %22 = inttoptr i64 %.22 to { i8*, i8* }*
+  %23 = bitcast { i8*, i8* }* %22 to i8**
+  tail call void @Py_DecRef(i8* nonnull %.1580)
+  %.1682 = load i8*, i8** %23, align 8
+  %24 = bitcast { i8*, i8* }* %22 to i8*
+  %sunkaddr9107 = getelementptr inbounds i8, i8* %24, i64 8
+  %25 = bitcast i8* %sunkaddr9107 to i8**
+  %.1684 = load i8*, i8** %25, align 8
+  %.1688 = icmp eq i8* %.1684, null
+  br i1 %.1688, label %B18.endif.endif.endif.end...endif.9.thread, label %B18.endif.endif.endif.end...endif.9
+
+B18.endif.endif.endif.end...endif.9.thread:       ; preds = %B18.endif.endif.endif.end...endif.8.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.9.if
+
+B18.endif.endif.endif.end...endif.9:              ; preds = %B18.endif.endif.endif.end...endif.8.endif.endif.endif
+  %.1690 = tail call i8* @PyList_GetItem(i8* nonnull %.1684, i64 3)
+  %.1696 = icmp eq i8* %.1690, null
+  br i1 %.1696, label %B18.endif.endif.endif.end...endif.9.if, label %B18.endif.endif.endif.end...endif.9.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.9.if:           ; preds = %B18.endif.endif.endif.end...endif.9, %B18.endif.endif.endif.end...endif.9.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.9.endif:        ; preds = %B18.endif.endif.endif.end...endif.9
+  tail call void @Py_IncRef(i8* nonnull %.1690)
+  %.1718 = tail call i8* @PyDict_GetItem(i8* %.1682, i8* nonnull %.1690)
+  tail call void @Py_IncRef(i8* %.1718)
+  %.1720 = icmp eq i8* %.1718, null
+  br i1 %.1720, label %B18.endif.endif.endif.end...endif.9.endif.if, label %B18.endif.endif.endif.end...endif.12
+
+B18.endif.endif.endif.end...endif.9.endif.if:     ; preds = %B18.endif.endif.endif.end...endif.9.endif
+  %.1723 = load i8*, i8** %.104, align 8
+  %.1727 = icmp eq i8* %.1723, null
+  br i1 %.1727, label %B18.endif.endif.endif.end...endif.9.endif.if.endif.thread, label %B18.endif.endif.endif.end...endif.9.endif.if.endif
+
+B18.endif.endif.endif.end...endif.9.endif.if.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.9.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.9.endif.if.endif.if
+
+B18.endif.endif.endif.end...endif.9.endif.if.endif: ; preds = %B18.endif.endif.endif.end...endif.9.endif.if
+  %.1729 = tail call i8* @PyList_GetItem(i8* nonnull %.1723, i64 1)
+  %.1735 = icmp eq i8* %.1729, null
+  br i1 %.1735, label %B18.endif.endif.endif.end...endif.9.endif.if.endif.if, label %B18.endif.endif.endif.end...endif.9.endif.if.endif.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.9.endif.if.endif.if: ; preds = %B18.endif.endif.endif.end...endif.9.endif.if.endif, %B18.endif.endif.endif.end...endif.9.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.9.endif.if.endif.endif: ; preds = %B18.endif.endif.endif.end...endif.9.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.1729)
+  %.1757 = tail call i8* @PyDict_GetItem(i8* %.1682, i8* nonnull %.1729)
+  %.1759 = load i8*, i8** %.104, align 8
+  %.1763 = icmp eq i8* %.1759, null
+  br i1 %.1763, label %B18.endif.endif.endif.end...endif.10.thread, label %B18.endif.endif.endif.end...endif.10
+
+B18.endif.endif.endif.end...endif.10.thread:      ; preds = %B18.endif.endif.endif.end...endif.9.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...endif.10.if
+
+B18.endif.endif.endif.end...endif.10:             ; preds = %B18.endif.endif.endif.end...endif.9.endif.if.endif.endif
+  %.1765 = tail call i8* @PyList_GetItem(i8* nonnull %.1759, i64 3)
+  %.1771 = icmp eq i8* %.1765, null
+  br i1 %.1771, label %B18.endif.endif.endif.end...endif.10.if, label %B18.endif.endif.endif.end...endif.10.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.10.if:          ; preds = %B18.endif.endif.endif.end...endif.10, %B18.endif.endif.endif.end...endif.10.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.10.endif:       ; preds = %B18.endif.endif.endif.end...endif.10
+  tail call void @Py_IncRef(i8* nonnull %.1765)
+  %.1793 = tail call i8* @PyDict_GetItem(i8* %.1757, i8* nonnull %.1765)
+  tail call void @Py_IncRef(i8* %.1793)
+  %.1795 = icmp eq i8* %.1793, null
+  br i1 %.1795, label %B18.endif.endif.endif.end...endif.10.endif.if, label %B18.endif.endif.endif.end...endif.12, !prof !0
+
+B18.endif.endif.endif.end...endif.10.endif.if:    ; preds = %B18.endif.endif.endif.end...endif.10.endif
+  %.1798 = load i8*, i8** %.104, align 8
+  %.1802 = icmp eq i8* %.1798, null
+  br i1 %.1802, label %B18.endif.endif.endif.end...endif.10.endif.if.endif.thread, label %B18.endif.endif.endif.end...endif.10.endif.if.endif
+
+B18.endif.endif.endif.end...endif.10.endif.if.endif.thread: ; preds = %B18.endif.endif.endif.end...endif.10.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B18.endif.endif.endif.end...if.11
+
+B18.endif.endif.endif.end...endif.10.endif.if.endif: ; preds = %B18.endif.endif.endif.end...endif.10.endif.if
+  %.1804 = tail call i8* @PyList_GetItem(i8* nonnull %.1798, i64 3)
+  %.1810 = icmp eq i8* %.1804, null
+  br i1 %.1810, label %B18.endif.endif.endif.end...if.11, label %B18.endif.endif.endif.end...endif.11, !prof !0
+
+B18.endif.endif.endif.end...if.11:                ; preds = %B18.endif.endif.endif.end...endif.10.endif.if.endif, %B18.endif.endif.endif.end...endif.10.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.11:             ; preds = %B18.endif.endif.endif.end...endif.10.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.1804)
+  %.1832 = tail call i8* @PyObject_GetAttr(i8* %.1757, i8* nonnull %.1804)
+  %.1833 = icmp eq i8* %.1832, null
+  br i1 %.1833, label %B18.endif.endif.endif.end...endif.11.if, label %B18.endif.endif.endif.end...endif.12, !prof !0
+
+B18.endif.endif.endif.end...endif.11.if:          ; preds = %B18.endif.endif.endif.end...endif.11
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.global name 'bool' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.12:             ; preds = %B18.endif.endif.endif.end...endif.11, %B18.endif.endif.endif.end...endif.10.endif, %B18.endif.endif.endif.end...endif.9.endif
+  %.1858 = phi i8* [ %.1718, %B18.endif.endif.endif.end...endif.9.endif ], [ %.1793, %B18.endif.endif.endif.end...endif.10.endif ], [ %.1832, %B18.endif.endif.endif.end...endif.11 ]
+  %.1911 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.1654)
+  %.1912 = tail call i8* @PyObject_Call(i8* nonnull %.1858, i8* %.1911, i8* null)
+  tail call void @Py_DecRef(i8* %.1911)
+  %.1914 = icmp eq i8* %.1912, null
+  br i1 %.1914, label %B18.endif.endif.endif.end...endif.12.if, label %B18.endif.endif.endif.end...endif.12.endif, !prof !0
+
+B18.endif.endif.endif.end...endif.12.if:          ; preds = %B18.endif.endif.endif.end...endif.12
+  tail call void @Py_DecRef(i8* nonnull %.797)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.1858)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  tail call void @Py_DecRef(i8* nonnull %.1544)
+  ret i32 -1, !ret_is_raise !1
+
+B18.endif.endif.endif.end...endif.12.endif:       ; preds = %B18.endif.endif.endif.end...endif.12
+  tail call void @Py_DecRef(i8* nonnull %.1858)
+  tail call void @Py_DecRef(i8* nonnull %.1654)
+  %.1967 = tail call i32 @PyObject_IsTrue(i8* nonnull %.1912)
+  %.1968 = icmp eq i32 %.1967, 0
+  br i1 %.1968, label %B10, label %B72
+
+B82.endif.thread:                                 ; preds = %B72
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B82.endif.if
+
+B82.endif:                                        ; preds = %B72
+  %.2007 = tail call i8* @PyList_GetItem(i8* nonnull %.2001, i64 10)
+  %.2013 = icmp eq i8* %.2007, null
+  br i1 %.2013, label %B82.endif.if, label %B82.endif.endif, !prof !0
+
+B82.endif.if:                                     ; preds = %B82.endif.endif.if.endif.endif.endif.endif.if.endif.thread, %B82.endif.endif.if.endif.endif.endif.thread, %B82.endif.endif.if.endif.thread, %B82.endif.thread, %B82.endif.endif.if.endif.endif.endif.endif.if.endif, %B82.endif.endif.if.endif.endif.endif, %B82.endif.endif.if.endif, %B82.endif
+  ret i32 -1, !ret_is_raise !1
+
+B82.endif.endif:                                  ; preds = %B82.endif
+  tail call void @Py_IncRef(i8* nonnull %.2007)
+  %.2017 = tail call i8* @PyDict_GetItem(i8* %.1999, i8* nonnull %.2007)
+  tail call void @Py_IncRef(i8* %.2017)
+  %.2019 = icmp eq i8* %.2017, null
+  br i1 %.2019, label %B82.endif.endif.if, label %B82.endif.endif.endif
+
+B82.endif.endif.if:                               ; preds = %B82.endif.endif
+  %.2022 = load i8*, i8** %.104, align 8
+  %.2026 = icmp eq i8* %.2022, null
+  br i1 %.2026, label %B82.endif.endif.if.endif.thread, label %B82.endif.endif.if.endif
+
+B82.endif.endif.endif:                            ; preds = %B82.endif.endif.if.endif....endif, %B82.endif.endif.if.endif.endif.endif.endif, %B82.endif.endif
+  %.2085 = phi i8* [ %.2017, %B82.endif.endif ], [ %.2056, %B82.endif.endif.if.endif.endif.endif.endif ], [ %.2077, %B82.endif.endif.if.endif....endif ]
+  %.2089 = load i8*, i8** %.104, align 8
+  %.2093 = icmp eq i8* %.2089, null
+  br i1 %.2093, label %B82.endif.endif.endif.endif.thread, label %B82.endif.endif.endif.endif
+
+B82.endif.endif.if.endif.thread:                  ; preds = %B82.endif.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B82.endif.if
+
+B82.endif.endif.if.endif:                         ; preds = %B82.endif.endif.if
+  %.2028 = tail call i8* @PyList_GetItem(i8* nonnull %.2022, i64 1)
+  %.2034 = icmp eq i8* %.2028, null
+  br i1 %.2034, label %B82.endif.if, label %B82.endif.endif.if.endif.endif, !prof !0
+
+B82.endif.endif.if.endif.endif:                   ; preds = %B82.endif.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.2028)
+  %.2038 = tail call i8* @PyDict_GetItem(i8* %.1999, i8* nonnull %.2028)
+  %.2040 = load i8*, i8** %.104, align 8
+  %.2044 = icmp eq i8* %.2040, null
+  br i1 %.2044, label %B82.endif.endif.if.endif.endif.endif.thread, label %B82.endif.endif.if.endif.endif.endif
+
+B82.endif.endif.if.endif.endif.endif.thread:      ; preds = %B82.endif.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B82.endif.if
+
+B82.endif.endif.if.endif.endif.endif:             ; preds = %B82.endif.endif.if.endif.endif
+  %.2046 = tail call i8* @PyList_GetItem(i8* nonnull %.2040, i64 10)
+  %.2052 = icmp eq i8* %.2046, null
+  br i1 %.2052, label %B82.endif.if, label %B82.endif.endif.if.endif.endif.endif.endif, !prof !0
+
+B82.endif.endif.if.endif.endif.endif.endif:       ; preds = %B82.endif.endif.if.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.2046)
+  %.2056 = tail call i8* @PyDict_GetItem(i8* %.2038, i8* nonnull %.2046)
+  tail call void @Py_IncRef(i8* %.2056)
+  %.2058 = icmp eq i8* %.2056, null
+  br i1 %.2058, label %B82.endif.endif.if.endif.endif.endif.endif.if, label %B82.endif.endif.endif, !prof !0
+
+B82.endif.endif.if.endif.endif.endif.endif.if:    ; preds = %B82.endif.endif.if.endif.endif.endif.endif
+  %.2061 = load i8*, i8** %.104, align 8
+  %.2065 = icmp eq i8* %.2061, null
+  br i1 %.2065, label %B82.endif.endif.if.endif.endif.endif.endif.if.endif.thread, label %B82.endif.endif.if.endif.endif.endif.endif.if.endif
+
+B82.endif.endif.if.endif.endif.endif.endif.if.endif.thread: ; preds = %B82.endif.endif.if.endif.endif.endif.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B82.endif.if
+
+B82.endif.endif.if.endif.endif.endif.endif.if.endif: ; preds = %B82.endif.endif.if.endif.endif.endif.endif.if
+  %.2067 = tail call i8* @PyList_GetItem(i8* nonnull %.2061, i64 10)
+  %.2073 = icmp eq i8* %.2067, null
+  br i1 %.2073, label %B82.endif.if, label %B82.endif.endif.if.endif....endif, !prof !0
+
+B82.endif.endif.if.endif....endif:                ; preds = %B82.endif.endif.if.endif.endif.endif.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.2067)
+  %.2077 = tail call i8* @PyObject_GetAttr(i8* %.2038, i8* nonnull %.2067)
+  %.2078 = icmp eq i8* %.2077, null
+  br i1 %.2078, label %B82.endif.endif.if.endif....endif.if, label %B82.endif.endif.endif, !prof !0
+
+B82.endif.endif.if.endif....endif.if:             ; preds = %B82.endif.endif.if.endif....endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([40 x i8], [40 x i8]* @".const.global name 'ValueError' is not defined", i64 0, i64 0))
+  ret i32 -1, !ret_is_raise !1
+
+B82.endif.endif.endif.endif.thread:               ; preds = %B82.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B82.endif.endif.endif.endif.if
+
+B82.endif.endif.endif.endif:                      ; preds = %B82.endif.endif.endif
+  %.2095 = tail call i8* @PyList_GetItem(i8* nonnull %.2089, i64 11)
+  %.2101 = icmp eq i8* %.2095, null
+  br i1 %.2101, label %B82.endif.endif.endif.endif.if, label %B82.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B82.endif.endif.endif.endif.if:                   ; preds = %B82.endif.endif.endif.endif.thread, %B82.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.2085)
+  ret i32 -1, !ret_is_raise !1
+
+B82.endif.endif.endif.endif.endif.endif.endif:    ; preds = %B82.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.2095)
+  %.2127 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.2095)
+  %.2128 = tail call i8* @PyObject_Call(i8* nonnull %.2085, i8* %.2127, i8* null)
+  tail call void @Py_DecRef(i8* %.2127)
+  %.2130 = icmp eq i8* %.2128, null
+  br i1 %.2130, label %B82.endif.endif.endif.endif.endif.endif.endif.if, label %B82.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B82.endif.endif.endif.endif.endif.endif.endif.if: ; preds = %B82.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.2085)
+  tail call void @Py_DecRef(i8* nonnull %.2095)
+  ret i32 -1, !ret_is_raise !1
+
+B82.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B82.endif.endif.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.2095)
+  tail call void @Py_DecRef(i8* nonnull %.2085)
+  tail call void @Py_IncRef(i8* nonnull %.2128)
+  tail call void @numba_do_raise(i8* nonnull %.2128)
+  tail call void @Py_DecRef(i8* nonnull %.2128)
+  ret i32 -1, !ret_is_raise !1
+
+B94.if:                                           ; preds = %B94.preheader
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([32 x i8], [32 x i8]* @".const.name 'sigma_max' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.if:                                     ; preds = %B94.endif.preheader
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([32 x i8], [32 x i8]* @".const.name 'sigma_min' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* null)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.if:                               ; preds = %B152.endif.endif.endif.en...endif.12.endif, %B94.endif.endif.preheader
+  %sigma_min.015042835.lcssa = phi i8* [ %.65.0, %B94.endif.endif.preheader ], [ %sigma_min.1, %B152.endif.endif.endif.en...endif.12.endif ]
+  %sigma_max.115052834.lcssa = phi i8* [ %sigma_max.0, %B94.endif.endif.preheader ], [ %sigma_max.2, %B152.endif.endif.endif.en...endif.12.endif ]
+  %sigma.015062833.lcssa = phi i8* [ null, %B94.endif.endif.preheader ], [ %.2788, %B152.endif.endif.endif.en...endif.12.endif ]
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.115052834.lcssa)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.015062833.lcssa)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.015042835.lcssa)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif:                            ; preds = %B94.endif.endif.endif.preheader, %B152.endif.endif.endif.en...endif.12.endif
+  %.22036584 = phi i8* [ %.2203, %B152.endif.endif.endif.en...endif.12.endif ], [ %.22036579, %B94.endif.endif.endif.preheader ]
+  %sigma.0150628336583 = phi i8* [ %.2788, %B152.endif.endif.endif.en...endif.12.endif ], [ null, %B94.endif.endif.endif.preheader ]
+  %sigma_max.1150528346582 = phi i8* [ %sigma_max.2, %B152.endif.endif.endif.en...endif.12.endif ], [ %sigma_max.0, %B94.endif.endif.endif.preheader ]
+  %sigma_min.0150428356581 = phi i8* [ %sigma_min.1, %B152.endif.endif.endif.en...endif.12.endif ], [ %.65.0, %B94.endif.endif.endif.preheader ]
+  %.2226 = load i8*, i8** %.104, align 8
+  %.2230 = icmp eq i8* %.2226, null
+  br i1 %.2230, label %B94.endif.endif.endif.endif.thread, label %B94.endif.endif.endif.endif
+
+B94.endif.endif.endif.endif.thread:               ; preds = %B94.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B94.endif.endif.endif.endif.if
+
+B94.endif.endif.endif.endif:                      ; preds = %B94.endif.endif.endif
+  %.2232 = tail call i8* @PyList_GetItem(i8* nonnull %.2226, i64 12)
+  %.2238 = icmp eq i8* %.2232, null
+  br i1 %.2238, label %B94.endif.endif.endif.endif.if, label %B94.endif.endif.endif.endif.endif, !prof !0
+
+B94.endif.endif.endif.endif.if:                   ; preds = %B94.endif.endif.endif.endif, %B94.endif.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %.22036584)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.endif.endif:                ; preds = %B94.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.2232)
+  %.2312 = tail call i8* @PyObject_RichCompare(i8* nonnull %.22036584, i8* nonnull %.2232, i32 4)
+  %.2313 = icmp eq i8* %.2312, null
+  br i1 %.2313, label %B94.endif.endif.endif.endif.endif.endif.endif.if, label %B94.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B94.endif.endif.endif.endif.endif.endif.endif.if: ; preds = %B94.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %.22036584)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.2232)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B94.endif.endif.endif.endif.endif
+  %26 = inttoptr i64 %.22 to { i8*, i8* }*
+  %27 = bitcast { i8*, i8* }* %26 to i8**
+  tail call void @Py_DecRef(i8* nonnull %.2232)
+  tail call void @Py_DecRef(i8* nonnull %.22036584)
+  %.2345 = load i8*, i8** %27, align 8
+  %28 = bitcast { i8*, i8* }* %26 to i8*
+  %sunkaddr9108 = getelementptr inbounds i8, i8* %28, i64 8
+  %29 = bitcast i8* %sunkaddr9108 to i8**
+  %.2347 = load i8*, i8** %29, align 8
+  %.2351 = icmp eq i8* %.2347, null
+  br i1 %.2351, label %B94.endif.endif.endif.end...endif.thread, label %B94.endif.endif.endif.end...endif
+
+B94.endif.endif.endif.end...endif.thread:         ; preds = %B94.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B94.endif.endif.endif.end...endif.if
+
+B94.endif.endif.endif.end...endif:                ; preds = %B94.endif.endif.endif.endif.endif.endif.endif.endif
+  %.2353 = tail call i8* @PyList_GetItem(i8* nonnull %.2347, i64 3)
+  %.2359 = icmp eq i8* %.2353, null
+  br i1 %.2359, label %B94.endif.endif.endif.end...endif.if, label %B94.endif.endif.endif.end...endif.endif, !prof !0
+
+B94.endif.endif.endif.end...endif.if:             ; preds = %B94.endif.endif.endif.end...endif, %B94.endif.endif.endif.end...endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.endif:          ; preds = %B94.endif.endif.endif.end...endif
+  tail call void @Py_IncRef(i8* nonnull %.2353)
+  %.2381 = tail call i8* @PyDict_GetItem(i8* %.2345, i8* nonnull %.2353)
+  tail call void @Py_IncRef(i8* %.2381)
+  %.2383 = icmp eq i8* %.2381, null
+  br i1 %.2383, label %B94.endif.endif.endif.end...endif.endif.if, label %B94.endif.endif.endif.end...endif.3
+
+B94.endif.endif.endif.end...endif.endif.if:       ; preds = %B94.endif.endif.endif.end...endif.endif
+  %.2386 = load i8*, i8** %.104, align 8
+  %.2390 = icmp eq i8* %.2386, null
+  br i1 %.2390, label %B94.endif.endif.endif.end...endif.endif.if.endif.thread, label %B94.endif.endif.endif.end...endif.endif.if.endif
+
+B94.endif.endif.endif.end...endif.endif.if.endif.thread: ; preds = %B94.endif.endif.endif.end...endif.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B94.endif.endif.endif.end...endif.endif.if.endif.if
+
+B94.endif.endif.endif.end...endif.endif.if.endif: ; preds = %B94.endif.endif.endif.end...endif.endif.if
+  %.2392 = tail call i8* @PyList_GetItem(i8* nonnull %.2386, i64 1)
+  %.2398 = icmp eq i8* %.2392, null
+  br i1 %.2398, label %B94.endif.endif.endif.end...endif.endif.if.endif.if, label %B94.endif.endif.endif.end...endif.endif.if.endif.endif, !prof !0
+
+B94.endif.endif.endif.end...endif.endif.if.endif.if: ; preds = %B94.endif.endif.endif.end...endif.endif.if.endif, %B94.endif.endif.endif.end...endif.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.endif.if.endif.endif: ; preds = %B94.endif.endif.endif.end...endif.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.2392)
+  %.2420 = tail call i8* @PyDict_GetItem(i8* %.2345, i8* nonnull %.2392)
+  %.2422 = load i8*, i8** %.104, align 8
+  %.2426 = icmp eq i8* %.2422, null
+  br i1 %.2426, label %B94.endif.endif.endif.end...endif.1.thread, label %B94.endif.endif.endif.end...endif.1
+
+B94.endif.endif.endif.end...endif.1.thread:       ; preds = %B94.endif.endif.endif.end...endif.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B94.endif.endif.endif.end...endif.1.if
+
+B94.endif.endif.endif.end...endif.1:              ; preds = %B94.endif.endif.endif.end...endif.endif.if.endif.endif
+  %.2428 = tail call i8* @PyList_GetItem(i8* nonnull %.2422, i64 3)
+  %.2434 = icmp eq i8* %.2428, null
+  br i1 %.2434, label %B94.endif.endif.endif.end...endif.1.if, label %B94.endif.endif.endif.end...endif.1.endif, !prof !0
+
+B94.endif.endif.endif.end...endif.1.if:           ; preds = %B94.endif.endif.endif.end...endif.1, %B94.endif.endif.endif.end...endif.1.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.1.endif:        ; preds = %B94.endif.endif.endif.end...endif.1
+  tail call void @Py_IncRef(i8* nonnull %.2428)
+  %.2456 = tail call i8* @PyDict_GetItem(i8* %.2420, i8* nonnull %.2428)
+  tail call void @Py_IncRef(i8* %.2456)
+  %.2458 = icmp eq i8* %.2456, null
+  br i1 %.2458, label %B94.endif.endif.endif.end...endif.1.endif.if, label %B94.endif.endif.endif.end...endif.3, !prof !0
+
+B94.endif.endif.endif.end...endif.1.endif.if:     ; preds = %B94.endif.endif.endif.end...endif.1.endif
+  %.2461 = load i8*, i8** %.104, align 8
+  %.2465 = icmp eq i8* %.2461, null
+  br i1 %.2465, label %B94.endif.endif.endif.end...endif.1.endif.if.endif.thread, label %B94.endif.endif.endif.end...endif.1.endif.if.endif
+
+B94.endif.endif.endif.end...endif.1.endif.if.endif.thread: ; preds = %B94.endif.endif.endif.end...endif.1.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B94.endif.endif.endif.end...endif.1.endif.if.endif.if
+
+B94.endif.endif.endif.end...endif.1.endif.if.endif: ; preds = %B94.endif.endif.endif.end...endif.1.endif.if
+  %.2467 = tail call i8* @PyList_GetItem(i8* nonnull %.2461, i64 3)
+  %.2473 = icmp eq i8* %.2467, null
+  br i1 %.2473, label %B94.endif.endif.endif.end...endif.1.endif.if.endif.if, label %B94.endif.endif.endif.end...endif.1.endif.if.endif.endif, !prof !0
+
+B94.endif.endif.endif.end...endif.1.endif.if.endif.if: ; preds = %B94.endif.endif.endif.end...endif.1.endif.if.endif, %B94.endif.endif.endif.end...endif.1.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.1.endif.if.endif.endif: ; preds = %B94.endif.endif.endif.end...endif.1.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.2467)
+  %.2495 = tail call i8* @PyObject_GetAttr(i8* %.2420, i8* nonnull %.2467)
+  %.2496 = icmp eq i8* %.2495, null
+  br i1 %.2496, label %B94.endif.endif.endif.end...if.2, label %B94.endif.endif.endif.end...endif.3, !prof !0
+
+B94.endif.endif.endif.end...if.2:                 ; preds = %B94.endif.endif.endif.end...endif.1.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.global name 'bool' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.3:              ; preds = %B94.endif.endif.endif.end...endif.1.endif.if.endif.endif, %B94.endif.endif.endif.end...endif.1.endif, %B94.endif.endif.endif.end...endif.endif
+  %.2521 = phi i8* [ %.2381, %B94.endif.endif.endif.end...endif.endif ], [ %.2456, %B94.endif.endif.endif.end...endif.1.endif ], [ %.2495, %B94.endif.endif.endif.end...endif.1.endif.if.endif.endif ]
+  %.2574 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.2312)
+  %.2575 = tail call i8* @PyObject_Call(i8* nonnull %.2521, i8* %.2574, i8* null)
+  tail call void @Py_DecRef(i8* %.2574)
+  %.2577 = icmp eq i8* %.2575, null
+  br i1 %.2577, label %B94.endif.endif.endif.end...endif.3.if, label %B94.endif.endif.endif.end...endif.3.endif, !prof !0
+
+B94.endif.endif.endif.end...endif.3.if:           ; preds = %B94.endif.endif.endif.end...endif.3
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %.2521)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B94.endif.endif.endif.end...endif.3.endif:        ; preds = %B94.endif.endif.endif.end...endif.3
+  tail call void @Py_DecRef(i8* nonnull %.2521)
+  tail call void @Py_DecRef(i8* nonnull %.2312)
+  %.2631 = tail call i32 @PyObject_IsTrue(i8* nonnull %.2575)
+  %.2632 = icmp eq i32 %.2631, 0
+  br i1 %.2632, label %B166, label %B152
+
+B152.endif.endif.if:                              ; preds = %B152
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif:                           ; preds = %B152
+  %.2702 = load i8*, i8** %.104, align 8
+  %.2706 = icmp eq i8* %.2702, null
+  br i1 %.2706, label %B152.endif.endif.endif.endif.thread, label %B152.endif.endif.endif.endif
+
+B152.endif.endif.endif.endif.thread:              ; preds = %B152.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.endif.if
+
+B152.endif.endif.endif.endif:                     ; preds = %B152.endif.endif.endif
+  %.2708 = tail call i8* @PyList_GetItem(i8* nonnull %.2702, i64 4)
+  %.2714 = icmp eq i8* %.2708, null
+  br i1 %.2714, label %B152.endif.endif.endif.endif.if, label %B152.endif.endif.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.endif.if:                  ; preds = %B152.endif.endif.endif.endif, %B152.endif.endif.endif.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.2679)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.endif.endif:               ; preds = %B152.endif.endif.endif.endif
+  tail call void @Py_IncRef(i8* nonnull %.2708)
+  %.2788 = tail call i8* @PyNumber_TrueDivide(i8* nonnull %.2679, i8* nonnull %.2708)
+  %.2789 = icmp eq i8* %.2788, null
+  br i1 %.2789, label %B152.endif.endif.endif.endif.endif.endif.endif.if, label %B152.endif.endif.endif.endif.endif.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.endif.endif.endif.endif.if: ; preds = %B152.endif.endif.endif.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %.2708)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.2679)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.endif.endif.endif.endif.endif: ; preds = %B152.endif.endif.endif.endif.endif
+  %30 = inttoptr i64 %.22 to { i8*, i8* }*
+  %31 = bitcast { i8*, i8* }* %30 to i8**
+  tail call void @Py_DecRef(i8* %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %.2708)
+  tail call void @Py_DecRef(i8* nonnull %.2679)
+  %.2822 = load i8*, i8** %31, align 8
+  %32 = bitcast { i8*, i8* }* %30 to i8*
+  %sunkaddr9109 = getelementptr inbounds i8, i8* %32, i64 8
+  %33 = bitcast i8* %sunkaddr9109 to i8**
+  %.2824 = load i8*, i8** %33, align 8
+  %.2828 = icmp eq i8* %.2824, null
+  br i1 %.2828, label %B152.endif.endif.endif.en...endif.thread, label %B152.endif.endif.endif.en...endif
+
+B152.endif.endif.endif.en...endif.thread:         ; preds = %B152.endif.endif.endif.endif.endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.if
+
+B152.endif.endif.endif.en...endif:                ; preds = %B152.endif.endif.endif.endif.endif.endif.endif.endif
+  %.2830 = tail call i8* @PyList_GetItem(i8* nonnull %.2824, i64 5)
+  %.2836 = icmp eq i8* %.2830, null
+  br i1 %.2836, label %B152.endif.endif.endif.en...endif.if, label %B152.endif.endif.endif.en...endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.if:             ; preds = %B152.endif.endif.endif.en...endif, %B152.endif.endif.endif.en...endif.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.endif:          ; preds = %B152.endif.endif.endif.en...endif
+  tail call void @Py_IncRef(i8* nonnull %.2830)
+  %.2856 = tail call i8* @PyDict_GetItem(i8* %.2822, i8* nonnull %.2830)
+  tail call void @Py_IncRef(i8* %.2856)
+  %.2858 = icmp eq i8* %.2856, null
+  br i1 %.2858, label %B152.endif.endif.endif.en...endif.endif.if, label %B152.endif.endif.endif.en...endif.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.endif.if:       ; preds = %B152.endif.endif.endif.en...endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([46 x i8], [46 x i8]* @".const.global name 'privacy_analysis' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.endif
+  %.2904 = load i8*, i8** %.104, align 8
+  %.2908 = icmp eq i8* %.2904, null
+  br i1 %.2908, label %B152.endif.endif.endif.en...endif.1.thread, label %B152.endif.endif.endif.en...endif.1
+
+B152.endif.endif.endif.en...endif.1.thread:       ; preds = %B152.endif.endif.endif.en...endif.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.1.if
+
+B152.endif.endif.endif.en...endif.1:              ; preds = %B152.endif.endif.endif.en...endif.endif.endif.endif
+  %.2910 = tail call i8* @PyList_GetItem(i8* nonnull %.2904, i64 6)
+  %.2916 = icmp eq i8* %.2910, null
+  br i1 %.2916, label %B152.endif.endif.endif.en...endif.1.if, label %B152.endif.endif.endif.en...endif.1.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.1.if:           ; preds = %B152.endif.endif.endif.en...endif.1, %B152.endif.endif.endif.en...endif.1.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.2856)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.1.endif:        ; preds = %B152.endif.endif.endif.en...endif.1
+  tail call void @Py_IncRef(i8* nonnull %.2910)
+  %.2938 = tail call i8* @PyObject_GetAttr(i8* nonnull %.2856, i8* nonnull %.2910)
+  %.2939 = icmp eq i8* %.2938, null
+  br i1 %.2939, label %B152.endif.endif.endif.en...endif.1.endif.if, label %B152.endif.endif.endif.en...endif.1.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.1.endif.if:     ; preds = %B152.endif.endif.endif.en...endif.1.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %.2856)
+  tail call void @Py_DecRef(i8* %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.1.endif.endif:  ; preds = %B152.endif.endif.endif.en...endif.1.endif
+  %34 = icmp eq i8* %arg.epochs, null
+  tail call void @Py_DecRef(i8* nonnull %.2856)
+  br i1 %34, label %B152.endif.endif.endif.en...endif.1.endif.endif.if, label %B152.endif.endif.endif.en...endif.1.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.1.endif.endif.if: ; preds = %B152.endif.endif.endif.en...endif.1.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @".const.name 'epochs' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  tail call void @Py_DecRef(i8* nonnull %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.1.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.1.endif.endif
+  %35 = icmp eq i8* %arg.sample_rate, null
+  br i1 %35, label %B152.endif.endif.endif.en...if.2, label %B152.endif.endif.endif.en...endif.2, !prof !0
+
+B152.endif.endif.endif.en...if.2:                 ; preds = %B152.endif.endif.endif.en...endif.1.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.name 'sample_rate' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  tail call void @Py_DecRef(i8* nonnull %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.2:              ; preds = %B152.endif.endif.endif.en...endif.1.endif.endif.endif
+  %.3011 = tail call i8* @PyNumber_TrueDivide(i8* nonnull %arg.epochs, i8* nonnull %arg.sample_rate)
+  %.3012 = icmp eq i8* %.3011, null
+  br i1 %.3012, label %B152.endif.endif.endif.en...endif.2.if, label %B152.endif.endif.endif.en...endif.3, !prof !0
+
+B152.endif.endif.endif.en...endif.2.if:           ; preds = %B152.endif.endif.endif.en...endif.2
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.3:              ; preds = %B152.endif.endif.endif.en...endif.2
+  %36 = icmp eq i8* %arg.alphas, null
+  br i1 %36, label %B152.endif.endif.endif.en...endif.3.if, label %B152.endif.endif.endif.en...endif.3.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.3.if:           ; preds = %B152.endif.endif.endif.en...endif.3
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @".const.name 'alphas' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %.3011)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  tail call void @Py_DecRef(i8* nonnull %.65.0)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.3.endif.endif:  ; preds = %B152.endif.endif.endif.en...endif.3
+  %.3160 = tail call i8* (i64, ...) @PyTuple_Pack(i64 4, i8* nonnull %arg.sample_rate, i8* nonnull %.2788, i8* nonnull %.3011, i8* nonnull %arg.alphas)
+  %.3161 = tail call i8* @PyObject_Call(i8* nonnull %.2938, i8* %.3160, i8* null)
+  tail call void @Py_DecRef(i8* %.3160)
+  %.3163 = icmp eq i8* %.3161, null
+  tail call void @Py_DecRef(i8* nonnull %.3011)
+  br i1 %.3163, label %B152.endif.endif.endif.en...endif.3.endif.endif.if, label %B152.endif.endif.endif.en...endif.3.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.3.endif.endif.if: ; preds = %B152.endif.endif.endif.en...endif.3.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.3.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.3.endif.endif
+  %37 = inttoptr i64 %.22 to { i8*, i8* }*
+  %38 = bitcast { i8*, i8* }* %37 to i8**
+  tail call void @Py_DecRef(i8* nonnull %.2938)
+  %.3194 = load i8*, i8** %38, align 8
+  %39 = bitcast { i8*, i8* }* %37 to i8*
+  %sunkaddr9110 = getelementptr inbounds i8, i8* %39, i64 8
+  %40 = bitcast i8* %sunkaddr9110 to i8**
+  %.3196 = load i8*, i8** %40, align 8
+  %.3200 = icmp eq i8* %.3196, null
+  br i1 %.3200, label %B152.endif.endif.endif.en...endif.4.thread, label %B152.endif.endif.endif.en...endif.4
+
+B152.endif.endif.endif.en...endif.4.thread:       ; preds = %B152.endif.endif.endif.en...endif.3.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.4.if
+
+B152.endif.endif.endif.en...endif.4:              ; preds = %B152.endif.endif.endif.en...endif.3.endif.endif.endif
+  %.3202 = tail call i8* @PyList_GetItem(i8* nonnull %.3196, i64 5)
+  %.3208 = icmp eq i8* %.3202, null
+  br i1 %.3208, label %B152.endif.endif.endif.en...endif.4.if, label %B152.endif.endif.endif.en...endif.4.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.4.if:           ; preds = %B152.endif.endif.endif.en...endif.4, %B152.endif.endif.endif.en...endif.4.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.4.endif:        ; preds = %B152.endif.endif.endif.en...endif.4
+  tail call void @Py_IncRef(i8* nonnull %.3202)
+  %.3230 = tail call i8* @PyDict_GetItem(i8* %.3194, i8* nonnull %.3202)
+  tail call void @Py_IncRef(i8* %.3230)
+  %.3232 = icmp eq i8* %.3230, null
+  br i1 %.3232, label %B152.endif.endif.endif.en...endif.4.endif.if, label %B152.endif.endif.endif.en...endif.4.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.4.endif.if:     ; preds = %B152.endif.endif.endif.en...endif.4.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([46 x i8], [46 x i8]* @".const.global name 'privacy_analysis' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.4.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.4.endif
+  %.3282 = load i8*, i8** %.104, align 8
+  %.3286 = icmp eq i8* %.3282, null
+  br i1 %.3286, label %B152.endif.endif.endif.en...endif.5.thread, label %B152.endif.endif.endif.en...endif.5
+
+B152.endif.endif.endif.en...endif.5.thread:       ; preds = %B152.endif.endif.endif.en...endif.4.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.5.if
+
+B152.endif.endif.endif.en...endif.5:              ; preds = %B152.endif.endif.endif.en...endif.4.endif.endif.endif
+  %.3288 = tail call i8* @PyList_GetItem(i8* nonnull %.3282, i64 7)
+  %.3294 = icmp eq i8* %.3288, null
+  br i1 %.3294, label %B152.endif.endif.endif.en...endif.5.if, label %B152.endif.endif.endif.en...endif.5.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.5.if:           ; preds = %B152.endif.endif.endif.en...endif.5, %B152.endif.endif.endif.en...endif.5.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %.3230)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.5.endif:        ; preds = %B152.endif.endif.endif.en...endif.5
+  tail call void @Py_IncRef(i8* nonnull %.3288)
+  %.3318 = tail call i8* @PyObject_GetAttr(i8* nonnull %.3230, i8* nonnull %.3288)
+  %.3319 = icmp eq i8* %.3318, null
+  br i1 %.3319, label %B152.endif.endif.endif.en...endif.5.endif.if, label %B152.endif.endif.endif.en...endif.5.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.5.endif.if:     ; preds = %B152.endif.endif.endif.en...endif.5.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %.3230)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.5.endif.endif:  ; preds = %B152.endif.endif.endif.en...endif.5.endif
+  %41 = icmp eq i8* %arg.target_delta, null
+  tail call void @Py_DecRef(i8* nonnull %.3230)
+  br i1 %41, label %B152.endif.endif.endif.en...endif.6.if, label %B152.endif.endif.endif.en...endif.6.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.6.if:           ; preds = %B152.endif.endif.endif.en...endif.5.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @".const.name 'target_delta' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.0)
+  tail call void @Py_DecRef(i8* null)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.65.0)
+  tail call void @Py_DecRef(i8* nonnull %.3318)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.6.endif.endif:  ; preds = %B152.endif.endif.endif.en...endif.5.endif.endif
+  %.3447 = tail call i8* (i64, ...) @PyTuple_Pack(i64 3, i8* nonnull %arg.alphas, i8* nonnull %.3161, i8* nonnull %arg.target_delta)
+  %.3448 = tail call i8* @PyObject_Call(i8* nonnull %.3318, i8* %.3447, i8* null)
+  tail call void @Py_DecRef(i8* %.3447)
+  %.3450 = icmp eq i8* %.3448, null
+  br i1 %.3450, label %B152.endif.endif.endif.en...endif.6.endif.endif.if, label %B152.endif.endif.endif.en...endif.6.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.6.endif.endif.if: ; preds = %B152.endif.endif.endif.en...endif.6.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3318)
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.6.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.6.endif.endif
+  tail call void @Py_DecRef(i8* nonnull %.3161)
+  tail call void @Py_DecRef(i8* nonnull %.3318)
+  %.3482 = load i8*, i8** %.104, align 8
+  %.3486 = icmp eq i8* %.3482, null
+  br i1 %.3486, label %B152.endif.endif.endif.en...endif.7.thread, label %B152.endif.endif.endif.en...endif.7
+
+B152.endif.endif.endif.en...endif.7.thread:       ; preds = %B152.endif.endif.endif.en...endif.6.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.7.if
+
+B152.endif.endif.endif.en...endif.7:              ; preds = %B152.endif.endif.endif.en...endif.6.endif.endif.endif
+  %.3488 = tail call i8* @PyList_GetItem(i8* nonnull %.3482, i64 8)
+  %.3494 = icmp eq i8* %.3488, null
+  br i1 %.3494, label %B152.endif.endif.endif.en...endif.7.if, label %B152.endif.endif.endif.en...endif.7.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.7.if:           ; preds = %B152.endif.endif.endif.en...endif.7, %B152.endif.endif.endif.en...endif.7.thread
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.3448)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.7.endif:        ; preds = %B152.endif.endif.endif.en...endif.7
+  tail call void @Py_IncRef(i8* nonnull %.3488)
+  %.3568 = tail call i8* @PyObject_GetItem(i8* nonnull %.3448, i8* nonnull %.3488)
+  %.3569 = icmp eq i8* %.3568, null
+  br i1 %.3569, label %B152.endif.endif.endif.en...if.8, label %B152.endif.endif.endif.en...endif.8, !prof !0
+
+B152.endif.endif.endif.en...if.8:                 ; preds = %B152.endif.endif.endif.en...endif.7.endif
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.3448)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  tail call void @Py_DecRef(i8* nonnull %.3488)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.8:              ; preds = %B152.endif.endif.endif.en...endif.7.endif
+  tail call void @Py_DecRef(i8* nonnull %.3488)
+  tail call void @Py_DecRef(i8* nonnull %.3448)
+  %.3645 = tail call i8* @PyObject_RichCompare(i8* nonnull %.3568, i8* nonnull %arg.target_epsilon, i32 0)
+  %.3646 = icmp eq i8* %.3645, null
+  br i1 %.3646, label %B152.endif.endif.endif.en...endif.8.endif.endif.if, label %B152.endif.endif.endif.en...endif.8.endif.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.8.endif.endif.if: ; preds = %B152.endif.endif.endif.en...endif.8
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %.3568)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.8.endif.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.8
+  %42 = inttoptr i64 %.22 to { i8*, i8* }*
+  %43 = bitcast { i8*, i8* }* %42 to i8**
+  tail call void @Py_DecRef(i8* nonnull %.3568)
+  %.3673 = load i8*, i8** %43, align 8
+  %44 = bitcast { i8*, i8* }* %42 to i8*
+  %sunkaddr9111 = getelementptr inbounds i8, i8* %44, i64 8
+  %45 = bitcast i8* %sunkaddr9111 to i8**
+  %.3675 = load i8*, i8** %45, align 8
+  %.3679 = icmp eq i8* %.3675, null
+  br i1 %.3679, label %B152.endif.endif.endif.en...endif.9.thread, label %B152.endif.endif.endif.en...endif.9
+
+B152.endif.endif.endif.en...endif.9.thread:       ; preds = %B152.endif.endif.endif.en...endif.8.endif.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.9.if
+
+B152.endif.endif.endif.en...endif.9:              ; preds = %B152.endif.endif.endif.en...endif.8.endif.endif.endif
+  %.3681 = tail call i8* @PyList_GetItem(i8* nonnull %.3675, i64 3)
+  %.3687 = icmp eq i8* %.3681, null
+  br i1 %.3687, label %B152.endif.endif.endif.en...endif.9.if, label %B152.endif.endif.endif.en...endif.9.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.9.if:           ; preds = %B152.endif.endif.endif.en...endif.9, %B152.endif.endif.endif.en...endif.9.thread
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.9.endif:        ; preds = %B152.endif.endif.endif.en...endif.9
+  tail call void @Py_IncRef(i8* nonnull %.3681)
+  %.3709 = tail call i8* @PyDict_GetItem(i8* %.3673, i8* nonnull %.3681)
+  tail call void @Py_IncRef(i8* %.3709)
+  %.3711 = icmp eq i8* %.3709, null
+  br i1 %.3711, label %B152.endif.endif.endif.en...endif.9.endif.if, label %B152.endif.endif.endif.en...endif.12
+
+B152.endif.endif.endif.en...endif.9.endif.if:     ; preds = %B152.endif.endif.endif.en...endif.9.endif
+  %.3714 = load i8*, i8** %.104, align 8
+  %.3718 = icmp eq i8* %.3714, null
+  br i1 %.3718, label %B152.endif.endif.endif.en...endif.9.endif.if.endif.thread, label %B152.endif.endif.endif.en...endif.9.endif.if.endif
+
+B152.endif.endif.endif.en...endif.9.endif.if.endif.thread: ; preds = %B152.endif.endif.endif.en...endif.9.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.9.endif.if.endif.if
+
+B152.endif.endif.endif.en...endif.9.endif.if.endif: ; preds = %B152.endif.endif.endif.en...endif.9.endif.if
+  %.3720 = tail call i8* @PyList_GetItem(i8* nonnull %.3714, i64 1)
+  %.3726 = icmp eq i8* %.3720, null
+  br i1 %.3726, label %B152.endif.endif.endif.en...endif.9.endif.if.endif.if, label %B152.endif.endif.endif.en...endif.9.endif.if.endif.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.9.endif.if.endif.if: ; preds = %B152.endif.endif.endif.en...endif.9.endif.if.endif, %B152.endif.endif.endif.en...endif.9.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.9.endif.if.endif.endif: ; preds = %B152.endif.endif.endif.en...endif.9.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.3720)
+  %.3748 = tail call i8* @PyDict_GetItem(i8* %.3673, i8* nonnull %.3720)
+  %.3750 = load i8*, i8** %.104, align 8
+  %.3754 = icmp eq i8* %.3750, null
+  br i1 %.3754, label %B152.endif.endif.endif.en...endif.10.thread, label %B152.endif.endif.endif.en...endif.10
+
+B152.endif.endif.endif.en...endif.10.thread:      ; preds = %B152.endif.endif.endif.en...endif.9.endif.if.endif.endif
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...endif.10.if
+
+B152.endif.endif.endif.en...endif.10:             ; preds = %B152.endif.endif.endif.en...endif.9.endif.if.endif.endif
+  %.3756 = tail call i8* @PyList_GetItem(i8* nonnull %.3750, i64 3)
+  %.3762 = icmp eq i8* %.3756, null
+  br i1 %.3762, label %B152.endif.endif.endif.en...endif.10.if, label %B152.endif.endif.endif.en...endif.10.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.10.if:          ; preds = %B152.endif.endif.endif.en...endif.10, %B152.endif.endif.endif.en...endif.10.thread
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.10.endif:       ; preds = %B152.endif.endif.endif.en...endif.10
+  tail call void @Py_IncRef(i8* nonnull %.3756)
+  %.3784 = tail call i8* @PyDict_GetItem(i8* %.3748, i8* nonnull %.3756)
+  tail call void @Py_IncRef(i8* %.3784)
+  %.3786 = icmp eq i8* %.3784, null
+  br i1 %.3786, label %B152.endif.endif.endif.en...endif.10.endif.if, label %B152.endif.endif.endif.en...endif.12, !prof !0
+
+B152.endif.endif.endif.en...endif.10.endif.if:    ; preds = %B152.endif.endif.endif.en...endif.10.endif
+  %.3789 = load i8*, i8** %.104, align 8
+  %.3793 = icmp eq i8* %.3789, null
+  br i1 %.3793, label %B152.endif.endif.endif.en...endif.10.endif.if.endif.thread, label %B152.endif.endif.endif.en...endif.10.endif.if.endif
+
+B152.endif.endif.endif.en...endif.10.endif.if.endif.thread: ; preds = %B152.endif.endif.endif.en...endif.10.endif.if
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @".const.`env.consts` is NULL in `read_const`", i64 0, i64 0))
+  br label %B152.endif.endif.endif.en...if.11
+
+B152.endif.endif.endif.en...endif.10.endif.if.endif: ; preds = %B152.endif.endif.endif.en...endif.10.endif.if
+  %.3795 = tail call i8* @PyList_GetItem(i8* nonnull %.3789, i64 3)
+  %.3801 = icmp eq i8* %.3795, null
+  br i1 %.3801, label %B152.endif.endif.endif.en...if.11, label %B152.endif.endif.endif.en...endif.11, !prof !0
+
+B152.endif.endif.endif.en...if.11:                ; preds = %B152.endif.endif.endif.en...endif.10.endif.if.endif, %B152.endif.endif.endif.en...endif.10.endif.if.endif.thread
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.11:             ; preds = %B152.endif.endif.endif.en...endif.10.endif.if.endif
+  tail call void @Py_IncRef(i8* nonnull %.3795)
+  %.3823 = tail call i8* @PyObject_GetAttr(i8* %.3748, i8* nonnull %.3795)
+  %.3824 = icmp eq i8* %.3823, null
+  br i1 %.3824, label %B152.endif.endif.endif.en...endif.11.if, label %B152.endif.endif.endif.en...endif.12, !prof !0
+
+B152.endif.endif.endif.en...endif.11.if:          ; preds = %B152.endif.endif.endif.en...endif.11
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @".const.global name 'bool' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.12:             ; preds = %B152.endif.endif.endif.en...endif.11, %B152.endif.endif.endif.en...endif.10.endif, %B152.endif.endif.endif.en...endif.9.endif
+  %.3849 = phi i8* [ %.3709, %B152.endif.endif.endif.en...endif.9.endif ], [ %.3784, %B152.endif.endif.endif.en...endif.10.endif ], [ %.3823, %B152.endif.endif.endif.en...endif.11 ]
+  %.3902 = tail call i8* (i64, ...) @PyTuple_Pack(i64 1, i8* nonnull %.3645)
+  %.3903 = tail call i8* @PyObject_Call(i8* nonnull %.3849, i8* %.3902, i8* null)
+  tail call void @Py_DecRef(i8* %.3902)
+  %.3905 = icmp eq i8* %.3903, null
+  br i1 %.3905, label %B152.endif.endif.endif.en...endif.12.if, label %B152.endif.endif.endif.en...endif.12.endif, !prof !0
+
+B152.endif.endif.endif.en...endif.12.if:          ; preds = %B152.endif.endif.endif.en...endif.12
+  tail call void @Py_DecRef(i8* nonnull %arg.alphas)
+  tail call void @Py_DecRef(i8* nonnull %arg.epochs)
+  tail call void @Py_DecRef(i8* nonnull %.2788)
+  tail call void @Py_DecRef(i8* nonnull %arg.sample_rate)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_epsilon)
+  tail call void @Py_DecRef(i8* nonnull %sigma_max.1150528346582)
+  tail call void @Py_DecRef(i8* nonnull %arg.target_delta)
+  tail call void @Py_DecRef(i8* nonnull %.3849)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581)
+  ret i32 -1, !ret_is_raise !1
+
+B152.endif.endif.endif.en...endif.12.endif:       ; preds = %B152.endif.endif.endif.en...endif.12
+  tail call void @Py_DecRef(i8* nonnull %.3849)
+  tail call void @Py_DecRef(i8* nonnull %.3645)
+  %.3959 = tail call i32 @PyObject_IsTrue(i8* nonnull %.3903)
+  %.3960 = icmp eq i32 %.3959, 0
+  tail call void @Py_DecRef(i8* nonnull %.3903)
+  tail call void @Py_IncRef(i8* nonnull %.2788)
+  %sigma_min.0150428356581.sink = select i1 %.3960, i8* %sigma_min.0150428356581, i8* %sigma_max.1150528346582
+  %sigma_min.1 = select i1 %.3960, i8* %.2788, i8* %sigma_min.0150428356581
+  %sigma_max.2 = select i1 %.3960, i8* %sigma_max.1150528346582, i8* %.2788
+  tail call void @Py_DecRef(i8* nonnull %sigma_min.0150428356581.sink)
+  tail call void @Py_DecRef(i8* null)
+  %.2203 = tail call i8* @PyNumber_Subtract(i8* nonnull %sigma_max.2, i8* nonnull %sigma_min.1)
+  %.2204 = icmp eq i8* %.2203, null
+  br i1 %.2204, label %B94.endif.endif.if, label %B94.endif.endif.endif, !prof !0
+
+B167.if:                                          ; preds = %B166
+  tail call void @PyErr_SetString(i8* nonnull @PyExc_NameError, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @".const.name 'sigma' is not defined", i64 0, i64 0))
+  tail call void @Py_DecRef(i8* null)
+  ret i32 -1, !ret_is_raise !1
+
+B167.endif:                                       ; preds = %B166
+  tail call void @Py_IncRef(i8* nonnull %sigma.0150628336583)
+  tail call void @Py_DecRef(i8* nonnull %sigma.0150628336583)
+  store i8* %sigma.0150628336583, i8** %retptr, align 8
+  ret i32 0
+}
+
+declare void @Py_DecRef(i8*) local_unnamed_addr
+
+declare void @Py_IncRef(i8*) local_unnamed_addr
+
+declare i8* @numba_py_type(i8*) local_unnamed_addr
+
+declare i8* @numba_unpickle(i8*, i32, i8*) local_unnamed_addr
+
+declare i8* @PyObject_GetAttrString(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyList_GetItem(i8*, i64) local_unnamed_addr
+
+declare void @PyErr_SetString(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyDict_GetItem(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyObject_GetAttr(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyTuple_Pack(i64, ...) local_unnamed_addr
+
+declare i8* @PyObject_Call(i8*, i8*, i8*) local_unnamed_addr
+
+declare i8* @PyObject_RichCompare(i8*, i8*, i32) local_unnamed_addr
+
+declare i32 @PyObject_IsTrue(i8*) local_unnamed_addr
+
+declare i8* @PyNumber_Multiply(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyNumber_TrueDivide(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyObject_GetItem(i8*, i8*) local_unnamed_addr
+
+declare void @numba_do_raise(i8*) local_unnamed_addr
+
+declare i8* @PyNumber_Subtract(i8*, i8*) local_unnamed_addr
+
+declare i8* @PyNumber_Add(i8*, i8*) local_unnamed_addr
+
+define i8* @"_ZN7cpython8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject"(i8* nocapture readnone %py_closure, i8* %py_args, i8* nocapture readnone %py_kws) local_unnamed_addr {
+entry:
+  %.5 = alloca i8*, align 8
+  %.6 = alloca i8*, align 8
+  %.7 = alloca i8*, align 8
+  %.8 = alloca i8*, align 8
+  %.9 = alloca i8*, align 8
+  %.10 = alloca i8*, align 8
+  %.11 = alloca i8*, align 8
+  %.12 = call i32 (i8*, i8*, i64, i64, ...) @PyArg_UnpackTuple(i8* %py_args, i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.const.get_noise_multiplier, i64 0, i64 0), i64 7, i64 7, i8** nonnull %.5, i8** nonnull %.6, i8** nonnull %.7, i8** nonnull %.8, i8** nonnull %.9, i8** nonnull %.10, i8** nonnull %.11)
+  %.13 = icmp eq i32 %.12, 0
+  %.54 = alloca i8*, align 8
+  store i8* null, i8** %.54, align 8
+  %excinfo = alloca { i8*, i32, i8* }*, align 8
+  store { i8*, i32, i8* }* null, { i8*, i32, i8* }** %excinfo, align 8
+  br i1 %.13, label %entry.if, label %entry.endif, !prof !0
+
+entry.if:                                         ; preds = %entry.endif.endif.endif.e...endif.endif.if, %entry.endif.endif.endif.e...endif.endif.endif, %entry.endif.endif.endif.e...endif.endif.if.if, %entry.endif.endif.endif.e...endif.endif.endif.if, %entry.endif.endif.endif.e...endif.1, %entry.endif.endif.endif.e...endif.if, %entry
+  %merge = phi i8* [ null, %entry ], [ %.68, %entry.endif.endif.endif.e...endif.if ], [ null, %entry.endif.endif.endif.e...endif.1 ], [ null, %entry.endif.endif.endif.e...endif.endif.endif.if ], [ null, %entry.endif.endif.endif.e...endif.endif.if.if ], [ null, %entry.endif.endif.endif.e...endif.endif.if ], [ null, %entry.endif.endif.endif.e...endif.endif.endif ]
+  ret i8* %merge
+
+entry.endif:                                      ; preds = %entry
+  %.17 = load i8*, i8** @"_ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject", align 8
+  %.22 = icmp eq i8* %.17, null
+  br i1 %.22, label %entry.endif.if, label %entry.endif.endif, !prof !0
+
+entry.endif.if:                                   ; preds = %entry.endif
+  call void @PyErr_SetString(i8* nonnull @PyExc_RuntimeError, i8* getelementptr inbounds ([134 x i8], [134 x i8]* @".const.missing Environment: _ZN08NumbaEnv8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject", i64 0, i64 0))
+  ret i8* null
+
+entry.endif.endif:                                ; preds = %entry.endif
+  %.26 = load i8*, i8** %.5, align 8
+  %.30 = load i8*, i8** %.6, align 8
+  %.34 = load i8*, i8** %.7, align 8
+  %.38 = load i8*, i8** %.8, align 8
+  %.42 = load i8*, i8** %.9, align 8
+  %.46 = load i8*, i8** %.10, align 8
+  %.50 = load i8*, i8** %.11, align 8
+  store i8* null, i8** %.54, align 8
+  %.58 = call i32 @"_ZN8__main__24get_noise_multiplier$241E8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject8pyobject"(i8** nonnull %.54, { i8*, i32, i8* }** nonnull %excinfo, i8* %.26, i8* %.30, i8* %.34, i8* %.38, i8* %.42, i8* %.46, i8* %.50) #1
+  %.59 = load { i8*, i32, i8* }*, { i8*, i32, i8* }** %excinfo, align 8
+  switch i32 %.58, label %entry.endif.endif.endif.e...endif.endif [
+    i32 -2, label %entry.endif.endif.endif.e...endif.if
+    i32 0, label %entry.endif.endif.endif.e...endif.if
+  ]
+
+entry.endif.endif.endif.e...endif.if:             ; preds = %entry.endif.endif, %entry.endif.endif
+  %.68 = load i8*, i8** %.54, align 8
+  %.61 = icmp eq i32 %.58, -2
+  br i1 %.61, label %entry.endif.endif.endif.e...endif.if.if, label %entry.if
+
+entry.endif.endif.endif.e...endif.endif:          ; preds = %entry.endif.endif
+  %.66 = icmp sgt i32 %.58, 0
+  br i1 %.66, label %entry.endif.endif.endif.e...endif.endif.if, label %entry.endif.endif.endif.e...endif.endif.endif
+
+entry.endif.endif.endif.e...endif.if.if:          ; preds = %entry.endif.endif.endif.e...endif.if
+  call void @Py_IncRef(i8* nonnull @_Py_NoneStruct)
+  ret i8* @_Py_NoneStruct
+
+entry.endif.endif.endif.e...endif.endif.if:       ; preds = %entry.endif.endif.endif.e...endif.endif
+  call void @PyErr_Clear()
+  %.77 = load { i8*, i32, i8* }, { i8*, i32, i8* }* %.59, align 8
+  %.78 = extractvalue { i8*, i32, i8* } %.77, 0
+  %.80 = extractvalue { i8*, i32, i8* } %.77, 1
+  %.82 = extractvalue { i8*, i32, i8* } %.77, 2
+  %.83 = call i8* @numba_unpickle(i8* %.78, i32 %.80, i8* %.82)
+  %.84 = icmp eq i8* %.83, null
+  br i1 %.84, label %entry.if, label %entry.endif.endif.endif.e...endif.endif.if.if, !prof !0
+
+entry.endif.endif.endif.e...endif.endif.endif:    ; preds = %entry.endif.endif.endif.e...endif.endif
+  switch i32 %.58, label %entry.endif.endif.endif.e...endif.1 [
+    i32 -3, label %entry.endif.endif.endif.e...endif.endif.endif.if
+    i32 -1, label %entry.if
+  ]
+
+entry.endif.endif.endif.e...endif.endif.if.if:    ; preds = %entry.endif.endif.endif.e...endif.endif.if
+  call void @numba_do_raise(i8* nonnull %.83)
+  br label %entry.if
+
+entry.endif.endif.endif.e...endif.endif.endif.if: ; preds = %entry.endif.endif.endif.e...endif.endif.endif
+  call void @PyErr_SetNone(i8* nonnull @PyExc_StopIteration)
+  br label %entry.if
+
+entry.endif.endif.endif.e...endif.1:              ; preds = %entry.endif.endif.endif.e...endif.endif.endif
+  call void @PyErr_SetString(i8* nonnull @PyExc_SystemError, i8* getelementptr inbounds ([43 x i8], [43 x i8]* @".const.unknown error when calling native function", i64 0, i64 0))
+  br label %entry.if
+}
+
+declare i32 @PyArg_UnpackTuple(i8*, i8*, i64, i64, ...) local_unnamed_addr
+
+declare void @PyErr_Clear() local_unnamed_addr
+
+declare void @PyErr_SetNone(i8*) local_unnamed_addr
+
+; Function Attrs: nounwind
+declare void @llvm.stackprotector(i8*, i8**) #0
+
+attributes #0 = { nounwind }
+attributes #1 = { noinline }
+
+!0 = !{!"branch_weights", i32 1, i32 99}
+!1 = !{i1 true}
